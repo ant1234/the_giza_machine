@@ -462,7 +462,6 @@
     <li><a href="#s11"><span class="sec-num">§11</span>Physical experiments — scaled models</a></li>
     <li><a href="#s12"><span class="sec-num">§12</span>What would restart the real system</a></li>
     <li><a href="#s13"><span class="sec-num">§13</span>State of the model</a></li>
-    <li><a href="#s14"><span class="sec-num">§14</span>Deploying this document online</a></li>
   </ol>
 </nav>
 
@@ -1033,85 +1032,6 @@
       <h4>⚑ Open — requires experiment</h4>
       <p>Whether the King's Chamber geometry produces 110 Hz from first principles alone (Elmer FEM Tier 1). Whether the nested architecture produces Q-multiplication ≥ 3× (Tier 2). Whether the sarcophagus offsets produce the predicted beam direction (Tier 3). What exits the Grand Gallery under operating conditions (Physical Tier 3). The absolute construction date (OSL dating of Sphinx enclosure floor). Whether the gallery direction points to Zeta Leporis at the construction epoch (ecliptic coordinate calculation).</p>
     </div>
-  </div>
-</section>
-
-<!-- § 14 DEPLOYMENT -->
-<section id="s14">
-  <div class="section-marker">
-    <div class="section-number">§ 14 · Deploying this document online</div>
-    <div class="section-line"></div>
-  </div>
-  <h2>Hosting this article on Vercel</h2>
-  <p>This document is a single self-contained HTML file with no dependencies except Google Fonts (loaded remotely). It can be deployed as a static site on Vercel in under five minutes at no cost. The <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> tag in the document head instructs web crawlers not to index or follow links in this page.</p>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">01</div>
-    <div class="deploy-step-body">
-      <p>Create a free account at vercel.com if you don't have one. No credit card required for the free tier.</p>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">02</div>
-    <div class="deploy-step-body">
-      <p>Install the Vercel CLI. This requires Node.js (nodejs.org) to be installed first.</p>
-      <code>npm install -g vercel</code>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">03</div>
-    <div class="deploy-step-body">
-      <p>Create a project folder and place this HTML file inside it, renamed to <code class="inline">index.html</code>.</p>
-      <code>mkdir giza-paper &amp;&amp; cd giza-paper</code>
-      <code># copy index.html into this folder</code>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">04</div>
-    <div class="deploy-step-body">
-      <p>Create a <code class="inline">vercel.json</code> configuration file in the same folder to set security headers and disable crawling at the server level as well as the meta tag level:</p>
-      <code>{
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
-      ]
-    }
-  ]
-}</code>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">05</div>
-    <div class="deploy-step-body">
-      <p>Deploy. The CLI will ask you to log in on first use, then create the project and deploy in one command.</p>
-      <code>vercel --prod</code>
-      <p style="margin-top:0.5rem">Vercel will output a URL like <code class="inline">https://your-project-name.vercel.app</code>. The site is live immediately.</p>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">06</div>
-    <div class="deploy-step-body">
-      <p>Optional: add a custom domain. In the Vercel dashboard, go to your project → Settings → Domains. Add your domain and follow the DNS configuration instructions. Vercel provisions an SSL certificate automatically via Let's Encrypt.</p>
-    </div>
-  </div>
-
-  <div class="deploy-step">
-    <div class="deploy-step-num">07</div>
-    <div class="deploy-step-body">
-      <p>To update the article, simply replace <code class="inline">index.html</code> in the folder and run <code class="inline">vercel --prod</code> again. Vercel deploys the new version instantly with zero downtime.</p>
-    </div>
-  </div>
-
-  <div class="callout nile">
-    <div class="callout-label">Crawler protection — belt and braces</div>
-    <p>This document uses two layers of crawler protection: the HTML <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> tag (handled by compliant crawlers before they read the page content), and the <code>X-Robots-Tag</code> HTTP response header set in <code>vercel.json</code> (handled before the HTML is parsed). Both Google and Bing respect both mechanisms. Non-compliant or scrapers are not covered by either — if you need hard access control, add password protection via Vercel's Password Protection feature (available on the Pro plan) or a Cloudflare Access policy in front of the deployment.</p>
   </div>
 </section>
 
