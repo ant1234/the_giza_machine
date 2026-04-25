@@ -203,7 +203,6 @@
     <li><a href="#s13"><span class="sec-num">§13</span>Physical experiments — scaled models</a></li>
     <li><a href="#s14"><span class="sec-num">§14</span>What would restart the real system</a></li>
     <li><a href="#s15"><span class="sec-num">§15</span>State of the model</a></li>
-    <li><a href="#s16"><span class="sec-num">§16</span>Deploying this document online</a></li>
   </ol>
 </nav>
 
@@ -801,25 +800,6 @@
       <h4>⚑ Open — requires experiment</h4>
       <p>King's Chamber eigenfrequency from geometry alone (Elmer FEM Tier 1). Nested architecture Q-multiplication ≥3× (Tier 2). Sarcophagus offsets produce predicted beam direction (Tier 3). What exits the Grand Gallery under operating conditions (Physical Tier 3 — the central question). Absolute construction date (OSL dating of Sphinx enclosure floor). Whether gallery azimuth intersects Zeta Leporis at the 10,000+ BCE epoch (ecliptic coordinate calculation). Danley's resonance mechanism: wind-driven or geologically-driven (sealed shaft retest).</p>
     </div>
-  </div>
-</section>
-
-<!-- §16 DEPLOYMENT -->
-<section id="s16">
-  <div class="section-marker"><div class="section-number">§ 16 · Deploying this document online</div><div class="section-line"></div></div>
-  <h2>Hosting this article on Vercel</h2>
-  <p>This document is a single self-contained HTML file. It can be deployed as a static site on Vercel at no cost in under five minutes. The <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> tag in the document head instructs web crawlers not to index or follow links from this page. A second layer of protection via the <code>X-Robots-Tag</code> HTTP response header is added via <code>vercel.json</code>.</p>
-
-  <div class="deploy-step"><div class="deploy-step-num">01</div><div class="deploy-step-body"><p>Create a free account at vercel.com. No credit card required for the free tier.</p></div></div>
-  <div class="deploy-step"><div class="deploy-step-num">02</div><div class="deploy-step-body"><p>Install the Vercel CLI. Requires Node.js (nodejs.org).</p><code>npm install -g vercel</code></div></div>
-  <div class="deploy-step"><div class="deploy-step-num">03</div><div class="deploy-step-body"><p>Create a project folder and place this file inside it as <code class="inline">index.html</code>.</p><code>mkdir giza-paper &amp;&amp; cd giza-paper</code></div></div>
-  <div class="deploy-step"><div class="deploy-step-num">04</div><div class="deploy-step-body"><p>Create <code class="inline">vercel.json</code> in the same folder for server-level noindex headers:</p><code>{ "headers": [{ "source": "/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }] }</code></div></div>
-  <div class="deploy-step"><div class="deploy-step-num">05</div><div class="deploy-step-body"><p>Deploy.</p><code>vercel --prod</code><p style="margin-top:0.5rem">Vercel outputs a URL like <code class="inline">https://your-project.vercel.app</code>. The site is live immediately.</p></div></div>
-  <div class="deploy-step"><div class="deploy-step-num">06</div><div class="deploy-step-body"><p>To update: replace <code class="inline">index.html</code> and run <code class="inline">vercel --prod</code> again. Zero downtime.</p></div></div>
-
-  <div class="callout nile">
-    <div class="callout-label">Crawler protection — two layers</div>
-    <p>This document uses the HTML <code>&lt;meta name="robots"&gt;</code> tag (compliant crawlers) and the <code>X-Robots-Tag</code> HTTP header (pre-HTML parsing). Both Google and Bing respect both mechanisms. For hard access control, add password protection via Vercel's Password Protection feature (Pro plan) or a Cloudflare Access policy.</p>
   </div>
 </section>
 
