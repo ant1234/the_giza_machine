@@ -711,10 +711,21 @@
   <p>The model makes four specific, quantitative, falsifiable predictions that can be tested computationally at zero cost using Elmer FEM, the free open-source finite element solver. The success criterion for each is specified before the computation is run.</p>
 
   <div class="exp-tier">
-    <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 1</span><span class="exp-tier-title">King's Chamber eigenfrequency analysis</span><span class="exp-tier-cost">Cost: $0 · Time: one afternoon</span></div>
+    <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 1a</span><span class="exp-tier-title">King's Chamber eigenfrequency analysis</span><span class="exp-tier-cost">Cost: $0 · Time: one afternoon</span></div>
     <div class="exp-tier-body">
       <p>Input: King's Chamber dimensions from Petrie 1883 (freely available). Granite material properties from geotechnical database (Young's modulus ~70 GPa, density ~2,700 kg/m³, Poisson's ratio ~0.27 — all published values for Aswan granite). Run acoustic eigenfrequency analysis of the chamber geometry.</p>
       <p>Prediction: the dominant mode will fall within 10% of the measured value of approximately 110–121 Hz using only geometry and material properties, with no parameter fitting. If it does, the model has its first independently verifiable computational data point. If it doesn't, the model needs revision at the most fundamental level. This single result — positive or negative — is the foundation everything else builds on.</p>
+    </div>
+  </div>
+  
+  <div class="exp-tier">
+    <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 1b</span><span class="exp-tier-title">Grand Gallery ecliptic coordinate calculation</span><span class="exp-tier-cost">Cost: $0 · Time: one afternoon</span></div>
+    <div class="exp-tier-body">
+      <p>This is the single most important unresolved geometric question in the model. The Grand Gallery's physical azimuth and elevation are fixed in stone — 26.3° elevation at a specific compass bearing — and do not precess with Earth's axial wobble. Whatever ecliptic coordinates this direction corresponds to, it has corresponded to them for the entire lifetime of the structure. The question is whether Zeta Leporis occupies that ecliptic position, and if not at the current epoch, at which epoch it did.</p>
+      <p>The shaft navigation fix — Thuban, Kochab, Alnitak, Sirius — is confirmed to encode approximately 2,500 BCE. But these are equatorial coordinate alignments that change significantly with precession. The gallery azimuth in ecliptic coordinates is a different and more stable quantity. The calculation requires converting the gallery's surveyed physical direction (azimuth and elevation from the Giza plateau) into ecliptic longitude and latitude, then checking whether Zeta Leporis's ecliptic coordinates — which are essentially stable across epochs — fall within that direction.</p>
+      <p>Tools: Stellarium (free, open source) or the Python astropy library (free). Input: Grand Gallery azimuth from Petrie 1883 survey, Giza plateau latitude 29.9792°N, Zeta Leporis ecliptic coordinates from the Hipparcos catalogue. Run the coordinate transformation for the current epoch, then step back through precession epochs at 1,000-year intervals to 15,000 BCE.</p>
+      <p>The result directly addresses the central dating tension in the model. If the gallery direction intersects Zeta Leporis's ecliptic position at approximately 10,000 BCE — consistent with Schoch's geological dating of the Sphinx — this strongly supports the construction date implied by the geology and suggests the shaft alignments were updated during Old Kingdom finishing work to reflect the contemporary sky while the gallery remained pointed at its original target. If the intersection epoch is closer to 2,500 BCE, the shaft alignments and the gallery encoding are consistent with a single construction date, and Schoch's geology requires a different explanation. If the gallery direction does not intersect Zeta Leporis at any epoch within the plausible construction window, the specific targeting claim needs revision while the broader celestial encoding — toward the Lepus sector — remains intact.</p>
+      <p>This computation costs nothing and takes one afternoon. It resolves the most significant open tension between the two primary dating constraints in the model — and no one has yet done it.</p>
     </div>
   </div>
 
