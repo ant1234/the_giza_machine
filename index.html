@@ -60,15 +60,289 @@
   .contrib-card li{font-size:0.88rem;color:var(--deep-sand);padding:0.3rem 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5;}
   .contrib-card li:last-child{border-bottom:none;}
   .contrib-card li::before{content:'·';color:var(--amber);margin-right:0.6rem;}
+
+  /* ── DATA INVENTORY — ACCORDION ── */
   .data-domain{margin:2rem 0;}
   .data-domain-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;padding:0.5rem 0;border-bottom:1px solid rgba(200,132,26,0.3);margin-bottom:0;}
-  .data-item{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem;}
+  .data-item{
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    font-size:0.88rem;
+    cursor:pointer;
+    user-select:none;
+    -webkit-user-select:none;
+  }
   .data-item:hover{background:rgba(200,132,26,0.04);}
+  .data-item-header{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
   .data-cell{padding:0.8rem 1rem;line-height:1.5;}
   .data-cell:first-child{color:var(--sand);}
   .data-cell:last-child{color:var(--stone);font-size:0.82rem;}
   .data-cell .src{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--copper);display:block;margin-top:0.2rem;}
-  @media(max-width:620px){.data-item{grid-template-columns:1fr;}}
+  .data-item-toggle-icon{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.65rem;
+    color:var(--amber);
+    margin-left:0.5rem;
+    display:inline-block;
+    transition:transform 0.25s ease;
+    vertical-align:middle;
+    line-height:1;
+  }
+  .data-item.open .data-item-toggle-icon{transform:rotate(180deg);}
+  .data-item-expand{
+    display:none;
+    padding:0.8rem 1rem 1.2rem;
+    background:rgba(200,132,26,0.03);
+    border-top:1px solid rgba(200,132,26,0.1);
+  }
+  .data-item.open .data-item-expand{display:block;}
+  .data-item-expand img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+    border:1px solid rgba(200,132,26,0.2);
+    margin-top:0.8rem;
+  }
+  .data-item-expand-caption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--stone);
+    font-style:italic;
+    margin-top:0.5rem;
+    line-height:1.5;
+  }
+
+  /* ── ANALOGY ACCORDION ── */
+  .analogy-accordion{border:1px solid rgba(200,132,26,0.3);margin:2rem 0;overflow:hidden;}
+  .analogy-accordion-row{
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    cursor:pointer;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .analogy-accordion-row:last-child{border-bottom:none;}
+  .analogy-accordion-row:hover{background:rgba(200,132,26,0.04);}
+  .analogy-accordion-header{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:0;
+    align-items:stretch;
+  }
+  .analogy-accordion-header.is-head{
+    background:rgba(200,132,26,0.08);
+    cursor:default;
+  }
+  .analogy-accordion-header.is-head:hover{background:rgba(200,132,26,0.08);}
+  .analogy-col{
+    padding:0.75rem 0.9rem;
+    font-size:0.86rem;
+    line-height:1.45;
+    border-right:1px solid rgba(255,255,255,0.04);
+  }
+  .analogy-col:last-child{border-right:none;}
+  .analogy-col.is-label{
+    color:var(--sand);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:0.5rem;
+  }
+  .analogy-col.is-label strong{color:var(--ivory);}
+  .analogy-col.th{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.63rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--amber);
+    font-weight:500;
+  }
+  .analogy-toggle-icon{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.6rem;
+    color:var(--amber);
+    flex-shrink:0;
+    display:inline-block;
+    transition:transform 0.25s ease;
+    line-height:1;
+  }
+  .analogy-accordion-row.open .analogy-toggle-icon{transform:rotate(180deg);}
+  .analogy-expand{
+    display:none;
+    padding:0.8rem 1rem 1.2rem;
+    background:rgba(200,132,26,0.03);
+    border-top:1px solid rgba(200,132,26,0.1);
+  }
+  .analogy-accordion-row.open .analogy-expand{display:block;}
+  .analogy-img-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0.6rem;
+    margin-top:0.8rem;
+  }
+  .analogy-img-item img{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(200,132,26,0.2);
+    object-fit:cover;
+    aspect-ratio:4/3;
+  }
+  .analogy-img-caption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.65rem;
+    color:var(--stone);
+    font-style:italic;
+    margin-top:0.3rem;
+    line-height:1.4;
+  }
+  .score-row .analogy-col{background:rgba(200,132,26,0.06);font-size:0.84rem;}
+
+  /* ── LOAD BEARING — ACCORDION ── */
+  .lb-header{display:grid;grid-template-columns:3fr 2fr 2fr;gap:0;background:rgba(200,132,26,0.1);}
+  .lb-header .lb-cell{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;padding:0.6rem 1rem;border-bottom:2px solid rgba(200,132,26,0.3);}
+  .load-bearing-item{
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:0.88rem;
+    cursor:pointer;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .load-bearing-item:first-of-type{border-top:1px solid rgba(200,132,26,0.3);}
+  .load-bearing-item:hover{background:rgba(200,132,26,0.04);}
+  .lb-row{
+    display:grid;
+    grid-template-columns:3fr 2fr 2fr;
+    gap:0;
+    align-items:start;
+  }
+  .lb-cell{padding:1.1rem 1rem;border-right:1px solid rgba(255,255,255,0.04);line-height:1.5;}
+  .lb-cell:last-child{border-right:none;}
+  .lb-component{color:var(--ivory);font-weight:600;}
+  .lb-sub{font-size:0.8rem;color:var(--stone);display:block;margin-top:0.2rem;font-weight:300;}
+  .lb-analogue{color:var(--nile-light);font-family:'JetBrains Mono',monospace;font-size:0.82rem;}
+  .lb-failure{color:#c06060;font-size:0.85rem;}
+  .lb-toggle-icon{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.6rem;
+    color:var(--amber);
+    margin-left:0.5rem;
+    display:inline-block;
+    transition:transform 0.25s ease;
+    vertical-align:middle;
+    line-height:1;
+  }
+  .load-bearing-item.open .lb-toggle-icon{transform:rotate(180deg);}
+  .lb-expand{
+    display:none;
+    padding:0.8rem 1rem 1.2rem;
+    background:rgba(200,132,26,0.03);
+    border-top:1px solid rgba(200,132,26,0.1);
+  }
+  .load-bearing-item.open .lb-expand{display:block;}
+  .lb-img-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0.7rem;
+    margin-top:0.8rem;
+  }
+  .lb-img-item img{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(200,132,26,0.2);
+    object-fit:cover;
+    aspect-ratio:3/2;
+  }
+  .lb-img-caption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.65rem;
+    color:var(--stone);
+    font-style:italic;
+    margin-top:0.35rem;
+    line-height:1.4;
+  }
+
+  /* ── SIGNAL FLOW MODAL ── */
+  .sf-node{cursor:pointer;}
+  .sf-node:hover{border-color:var(--amber);background:rgba(200,132,26,0.08);}
+  .sf-node:hover .sf-name{color:var(--amber-light);}
+  #sf-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(10,8,5,0.88);
+    z-index:9000;
+    align-items:center;
+    justify-content:center;
+    padding:1.5rem;
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+  #sf-modal-overlay.active{display:flex;}
+  #sf-modal-box{
+    background:var(--granite);
+    border:1px solid rgba(200,132,26,0.4);
+    max-width:680px;
+    width:100%;
+    max-height:90vh;
+    overflow-y:auto;
+    position:relative;
+    padding:2rem;
+  }
+  #sf-modal-close{
+    position:absolute;
+    top:0.9rem;
+    right:1rem;
+    background:none;
+    border:none;
+    color:var(--stone);
+    font-size:1.1rem;
+    cursor:pointer;
+    line-height:1;
+    padding:0.2rem 0.4rem;
+    transition:color 0.15s;
+  }
+  #sf-modal-close:hover{color:var(--amber);}
+  #sf-modal-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.62rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:0.4rem;
+  }
+  #sf-modal-title{
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--ivory);
+    margin-bottom:1.2rem;
+    line-height:1.2;
+    padding-right:2rem;
+  }
+  #sf-modal-img{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(200,132,26,0.2);
+    margin-bottom:1.2rem;
+    object-fit:cover;
+    aspect-ratio:16/9;
+  }
+  #sf-modal-desc{
+    font-size:0.92rem;
+    color:var(--deep-sand);
+    line-height:1.75;
+    font-weight:300;
+  }
+
   .ev-section-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;padding:0.6rem 0 0.4rem;border-bottom:1px solid rgba(200,132,26,0.25);margin:1.5rem 0 0;}
   .ev-row{display:grid;grid-template-columns:32px 1fr 140px;gap:6px;align-items:start;padding:7px 4px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.86rem;}
   .ev-icon{text-align:center;font-size:14px;padding-top:2px;}
@@ -101,15 +375,6 @@
   .sf-name{font-size:0.82rem;color:var(--ivory);font-weight:600;line-height:1.3;}
   .sf-note{font-size:0.72rem;color:var(--stone);margin-top:0.3rem;line-height:1.3;}
   .sf-node.highlight{border-color:var(--amber);background:rgba(200,132,26,0.1);}
-  .lb-header{display:grid;grid-template-columns:3fr 2fr 2fr;gap:0;background:rgba(200,132,26,0.1);}
-  .lb-header .lb-cell{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;padding:0.6rem 1rem;border-bottom:2px solid rgba(200,132,26,0.3);}
-  .load-bearing-item{display:grid;grid-template-columns:3fr 2fr 2fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem;}
-  .load-bearing-item:first-child{border-top:1px solid rgba(200,132,26,0.3);}
-  .lb-cell{padding:1.1rem 1rem;border-right:1px solid rgba(255,255,255,0.04);}
-  .lb-cell:last-child{border-right:none;}
-  .lb-component{color:var(--ivory);font-weight:600;}
-  .lb-analogue{color:var(--nile-light);font-family:'JetBrains Mono',monospace;font-size:0.82rem;}
-  .lb-failure{color:#c06060;font-size:0.85rem;}
   .exp-tier{border:1px solid rgba(200,132,26,0.3);margin:2rem 0;overflow:hidden;}
   .exp-tier-header{background:rgba(200,132,26,0.1);padding:1rem 1.5rem;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;}
   .exp-tier-number{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;}
@@ -141,7 +406,40 @@
   code{font-family:'JetBrains Mono',monospace;font-size:0.85em;color:var(--amber-light);background:rgba(200,132,26,0.1);padding:0.1em 0.4em;}
   footer{border-top:1px solid rgba(200,132,26,0.2);padding:3rem 2rem;text-align:center;background:var(--granite);}
   footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;color:var(--stone);margin:0;line-height:2;}
-  @media(max-width:640px){.load-bearing-item,.lb-header{grid-template-columns:1fr;}.freq-row{grid-template-columns:1fr;}.ev-row{grid-template-columns:28px 1fr;}.ev-verdict{grid-column:2;}}
+
+  /* ── RESPONSIVE BREAKPOINTS ── */
+  @media(max-width:720px){
+    .analogy-accordion-header{grid-template-columns:1fr 1fr;}
+    .analogy-col.th:nth-child(3),
+    .analogy-col.th:nth-child(4),
+    .analogy-col:not(.is-label):not(.th):nth-child(3),
+    .analogy-col:not(.is-label):not(.th):nth-child(4){display:none;}
+    .analogy-img-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:640px){
+    .load-bearing-item,.lb-header{grid-template-columns:1fr;}
+    .lb-row{grid-template-columns:1fr;}
+    .lb-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .lb-cell:last-child{border-bottom:none;}
+    .freq-row{grid-template-columns:1fr;}
+    .ev-row{grid-template-columns:28px 1fr;}
+    .ev-verdict{grid-column:2;}
+    .data-item-header{grid-template-columns:1fr;}
+    .data-cell:last-child{border-top:1px solid rgba(255,255,255,0.04);}
+    .lb-img-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:480px){
+    .analogy-accordion-header{grid-template-columns:1fr;}
+    .analogy-col{border-right:none;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .analogy-col:last-child{border-bottom:none;}
+    .analogy-col.th:nth-child(3),
+    .analogy-col.th:nth-child(4),
+    .analogy-col:not(.is-label):not(.th):nth-child(3),
+    .analogy-col:not(.is-label):not(.th):nth-child(4){display:block;}
+    .analogy-img-grid{grid-template-columns:1fr;}
+    #sf-modal-box{padding:1.4rem;}
+    #sf-modal-title{font-size:1.15rem;}
+  }
 </style>
 </head>
 <body>
@@ -211,72 +509,492 @@
 <section id="s02">
   <div class="section-marker"><div class="section-number">§ 02 · The complete data inventory</div><div class="section-line"></div></div>
   <h2>What is verified — separated from what is claimed</h2>
-  <p>The following is a complete inventory of verified measurements, peer-reviewed computational results, and independently confirmed geometric relationships. Each item is attributed to its source. No application claims are made here — those belong in the experimental programme. The inventory is the foundation. Everything else builds on it.</p>
+  <p>The following is a complete inventory of verified measurements, peer-reviewed computational results, and independently confirmed geometric relationships. Each item is attributed to its source. Click any row to expand it. No application claims are made here — those belong in the experimental programme. The inventory is the foundation. Everything else builds on it.</p>
 
   <div class="data-domain">
     <div class="data-domain-title">Structural measurements</div>
-    <div class="data-item"><div class="data-cell">Base level to ±2.1cm across 230m<span class="src">Petrie 1883, Cole 1925</span></div><div class="data-cell">Requires complete footprint specified before first stone. Highest precision civil engineering level tolerance.</div></div>
-    <div class="data-item"><div class="data-cell">Cardinal orientation: mean deviation 3′38″ of arc (~0.06°)<span class="src">Petrie 1883</span></div><div class="data-cell">Consistent with shaft star-alignment system requiring precise azimuth fixed before construction.</div></div>
-    <div class="data-item"><div class="data-cell">Casing stone joints: 0.5mm average over metre-scale surfaces<span class="src">Petrie 1883</span></div><div class="data-cell">Sub-millimetre jointing on tonne-scale blocks. Comparable to precision optical surface work.</div></div>
-    <div class="data-item"><div class="data-cell">King's Chamber: ~10.47 × 5.23 × 5.84m, Aswan granite throughout<span class="src">Petrie 1883</span></div><div class="data-cell">Specific dimensions; basis for eigenfrequency prediction. Granite chosen over limestone — 800km transport cost.</div></div>
-    <div class="data-item"><div class="data-cell">Sarcophagus too wide to pass through ascending passage<span class="src">Petrie 1883</span></div><div class="data-cell">Placed before upper passages sealed. Permanent sealed-cavity design intent.</div></div>
-    <div class="data-item"><div class="data-cell">Grand Gallery: 46.6m long, 8.6m tall, 26.3° incline<span class="src">Petrie 1883</span></div><div class="data-cell">Specific elevation angle is the claimed directed output angle. Navigation system converges on this direction.</div></div>
-    <div class="data-item"><div class="data-cell">Four shaft angles: N ~32.5° and ~39°; S ~39.6° and ~45°<span class="src">Petrie 1883, Bauval 1994</span></div><div class="data-cell">Precisely cut at specific elevations — not structural. Astronomically confirmed to point at bright stars at a specific epoch.</div></div>
-    <div class="data-item"><div class="data-cell">Large void confirmed above Grand Gallery: ≥30m long, gallery-like cross-section<span class="src">Morishima et al., Nature 2017</span></div><div class="data-cell">First major internal discovery since 19th century. Peer-reviewed, muon tomography.</div></div>
-    <div class="data-item"><div class="data-cell">Granite drill cores: feedrate ~500× faster per revolution than modern diamond drills<span class="src">Dunn 1998, cross-checked Petrie 1883</span></div><div class="data-cell">Spiral groove cut deeper through harder quartz than softer feldspar — opposite to conventional drilling. Consistent with ultrasonic machining.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Base level to ±2.1cm across 230m<span class="src">Petrie 1883, Cole 1925</span></div>
+        <div class="data-cell">Requires complete footprint specified before first stone. Highest precision civil engineering level tolerance. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Aerial view of the Giza plateau showing the base levelling precision of the Great Pyramid — the entire 230m base is flat to within 2.1cm">
+        <div class="data-item-expand-caption">placeholder — replace with: Petrie survey diagram or aerial photograph showing base perimeter measurements</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Cardinal orientation: mean deviation 3′38″ of arc (~0.06°)<span class="src">Petrie 1883</span></div>
+        <div class="data-cell">Consistent with shaft star-alignment system requiring precise azimuth fixed before construction. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Overhead diagram showing the cardinal orientation of the Great Pyramid and its deviation from true north">
+        <div class="data-item-expand-caption">placeholder — replace with: orientation diagram, Petrie's survey compass bearings, or satellite overlay on true north</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Casing stone joints: 0.5mm average over metre-scale surfaces<span class="src">Petrie 1883</span></div>
+        <div class="data-cell">Sub-millimetre jointing on tonne-scale blocks. Comparable to precision optical surface work. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Close-up photograph of remaining Tura limestone casing stone joints at the base of the Great Pyramid showing sub-millimetre precision">
+        <div class="data-item-expand-caption">placeholder — replace with: close photograph of surviving casing stone joints at base or Petrie's documentation of joint measurements</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">King's Chamber: ~10.47 × 5.23 × 5.84m, Aswan granite throughout<span class="src">Petrie 1883</span></div>
+        <div class="data-cell">Specific dimensions; basis for eigenfrequency prediction. Granite chosen over limestone — 800km transport cost. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Cutaway diagram of the King's Chamber showing its granite construction and precise dimensions">
+        <div class="data-item-expand-caption">placeholder — replace with: King's Chamber cross-section diagram with annotated dimensions, or photograph of the granite interior</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Sarcophagus too wide to pass through ascending passage<span class="src">Petrie 1883</span></div>
+        <div class="data-cell">Placed before upper passages sealed. Permanent sealed-cavity design intent. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram comparing the width of the granite sarcophagus with the width of the ascending passage showing it could not have been inserted after construction">
+        <div class="data-item-expand-caption">placeholder — replace with: passage width vs sarcophagus width comparison diagram, or photograph of the sarcophagus in situ in the King's Chamber</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Grand Gallery: 46.6m long, 8.6m tall, 26.3° incline<span class="src">Petrie 1883</span></div>
+        <div class="data-cell">Specific elevation angle is the claimed directed output angle. Navigation system converges on this direction. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph looking up the Grand Gallery showing its steep 26.3 degree incline and corbelled walls">
+        <div class="data-item-expand-caption">placeholder — replace with: Grand Gallery interior photograph or cross-section diagram annotated with angle and dimensions</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Four shaft angles: N ~32.5° and ~39°; S ~39.6° and ~45°<span class="src">Petrie 1883, Bauval 1994</span></div>
+        <div class="data-cell">Precisely cut at specific elevations — not structural. Astronomically confirmed to point at bright stars at a specific epoch. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Cross-section diagram of the Khufu pyramid showing all four shafts and the stars they point to: Thuban, Kochab north and Alnitak, Sirius south">
+        <div class="data-item-expand-caption">placeholder — replace with: pyramid cross-section showing the four shafts with stellar targets labelled</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Large void confirmed above Grand Gallery: ≥30m long, gallery-like cross-section<span class="src">Morishima et al., Nature 2017</span></div>
+        <div class="data-cell">First major internal discovery since 19th century. Peer-reviewed, muon tomography. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Scan Pyramids muon tomography image showing the location of the large void above the Grand Gallery inside the Khufu pyramid">
+        <div class="data-item-expand-caption">placeholder — replace with: Scan Pyramids / Morishima et al. 2017 muon tomography image showing void location (Nature 2017 Fig. 3)</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Granite drill cores: feedrate ~500× faster per revolution than modern diamond drills<span class="src">Dunn 1998, cross-checked Petrie 1883</span></div>
+        <div class="data-cell">Spiral groove cut deeper through harder quartz than softer feldspar — opposite to conventional drilling. Consistent with ultrasonic machining. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of an ancient Egyptian granite core sample showing the spiral groove cutting pattern inconsistent with conventional drill methods">
+        <div class="data-item-expand-caption">placeholder — replace with: photograph of Petrie's core drill samples (now in Petrie Museum, UCL) showing spiral groove pattern</div>
+      </div>
+    </div>
   </div>
 
   <div class="data-domain">
     <div class="data-domain-title">Electromagnetic properties (peer-reviewed)</div>
-    <div class="data-item"><div class="data-cell">Two resonant EM peaks in free space: λ≈333m and λ≈230m<span class="src">Balezin, Baryshnikova, Kapitanova, Evlyukhin — J. Applied Physics 2018</span></div><div class="data-cell">Computed via CST Microwave Studio, COMSOL, and Discrete Dipole Approximation independently — all three agree.</div></div>
-    <div class="data-item"><div class="data-cell">Electric field ~3× enhancement in King's Chamber at λ=230m<span class="src">Balezin et al. 2018</span></div><div class="data-cell">Inner cavity concentrates EM energy. Model used uniform limestone — actual granite chambers would show stronger effect.</div></div>
-    <div class="data-item"><div class="data-cell">Substrate case: EM energy focused downward into plateau; maxima at subterranean chamber<span class="src">Balezin et al. 2018</span></div><div class="data-cell">Pyramid naturally drives energy into ground, not upward. Magnetic field concentration at subterranean chamber strongest of all three.</div></div>
-    <div class="data-item"><div class="data-cell">Total extinction cross-section identical from above or below<span class="src">Balezin et al. 2018</span></div><div class="data-cell">Symmetric bidirectional EM coupling. System can both collect from and radiate into the ground plane.</div></div>
-    <div class="data-item"><div class="data-cell">Three-pyramid complex not modelled — flagged as future work<span class="src">Balezin et al. 2018 (conclusion)</span></div><div class="data-cell">Authors explicitly suggest this as the next investigation. Corresponds to Elmer FEM Tier 3 in our programme.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Two resonant EM peaks in free space: λ≈333m and λ≈230m<span class="src">Balezin, Baryshnikova, Kapitanova, Evlyukhin — J. Applied Physics 2018</span></div>
+        <div class="data-cell">Computed via CST Microwave Studio, COMSOL, and Discrete Dipole Approximation independently — all three agree. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Graph from Balezin et al. 2018 showing the extinction and scattering cross-section spectra of the Great Pyramid with resonant peaks at 333m and 230m wavelength">
+        <div class="data-item-expand-caption">placeholder — replace with: Balezin et al. 2018 Figure 1 — extinction and scattering cross-section spectra (J. Applied Physics 124, 034903)</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Electric field ~3× enhancement in King's Chamber at λ=230m<span class="src">Balezin et al. 2018</span></div>
+        <div class="data-cell">Inner cavity concentrates EM energy. Model used uniform limestone — actual granite chambers would show stronger effect. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="False-colour electromagnetic field distribution map from Balezin et al. 2018 showing electric field concentration inside the King's Chamber at 230m wavelength">
+        <div class="data-item-expand-caption">placeholder — replace with: Balezin et al. 2018 Figure 2c or 2d — electric field distribution at λ=230m showing King's Chamber concentration</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Substrate case: EM energy focused downward into plateau; maxima at subterranean chamber<span class="src">Balezin et al. 2018</span></div>
+        <div class="data-cell">Pyramid naturally drives energy into ground, not upward. Magnetic field concentration at subterranean chamber strongest of all three. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Field distribution diagram from Balezin et al. 2018 showing electromagnetic energy focused downward into the limestone plateau substrate beneath the pyramid">
+        <div class="data-item-expand-caption">placeholder — replace with: Balezin et al. 2018 Figure 6 — field distribution in pyramid on substrate showing downward focusing</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Total extinction cross-section identical from above or below<span class="src">Balezin et al. 2018</span></div>
+        <div class="data-cell">Symmetric bidirectional EM coupling. System can both collect from and radiate into the ground plane. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Overlaid spectral plots from Balezin et al. 2018 showing identical extinction cross-sections for electromagnetic waves arriving from above and below the pyramid">
+        <div class="data-item-expand-caption">placeholder — replace with: Balezin et al. 2018 Figure 1 — overlaid extinction spectra for both incidence directions</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Three-pyramid complex not modelled — flagged as future work<span class="src">Balezin et al. 2018 (conclusion)</span></div>
+        <div class="data-cell">Authors explicitly suggest this as the next investigation. Corresponds to Elmer FEM Tier 3 in our programme. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Aerial satellite view of the three Giza pyramids showing their spatial arrangement — the configuration that Balezin et al. flagged as requiring future electromagnetic modelling">
+        <div class="data-item-expand-caption">placeholder — replace with: satellite/aerial image of all three Giza pyramids showing their spatial relationship</div>
+      </div>
+    </div>
   </div>
 
   <div class="data-domain">
     <div class="data-domain-title">Acoustic measurements (in-situ)</div>
-    <div class="data-item"><div class="data-cell">LF resonances 0.5–20 Hz present in King's Chamber in silence<span class="src">Tom Danley, acoustics engineer (NASA contractor), 1997</span></div><div class="data-cell">Present without active excitation. Pattern roughly forms F# chord across multiple octaves. Stone type assessed as deliberately selected to enhance these vibrations.</div></div>
-    <div class="data-item"><div class="data-cell">King's Chamber resonance ~121 Hz; sarcophagus resonance ~117 Hz<span class="src">John Reid, acoustic engineer, 1997</span></div><div class="data-cell">Two slightly offset resonances — beat frequency matches resting heartbeat. Sarcophagus as tuned resonator within chamber.</div></div>
-    <div class="data-item"><div class="data-cell">Sarcophagus resonates at 438 Hz (A440 calibrated)<span class="src">Paul Horn, musician, calibrated Korg tuner, 1976; confirmed by Dunn 1998</span></div><div class="data-cell">Independent calibrated measurement confirms sarcophagus as a tuned acoustic element.</div></div>
-    <div class="data-item"><div class="data-cell">King's Chamber: 49.5 Hz dominant, spikes at 30.5, 33 Hz, cluster 30–130 Hz<span class="src">Andrew Collins, 2019, smartphone recorders in silence</span></div><div class="data-cell">Lowest-budget measurement; consistent with Danley at LF range. VLF and infrasound range confirmed.</div></div>
-    <div class="data-item"><div class="data-cell">Queen's Chamber: dominant spikes at 118 Hz and 120 Hz<span class="src">Andrew Collins, 2019</span></div><div class="data-cell">Different granite chamber, same frequency band as King's Chamber — consistent with material-driven rather than room-mode resonance.</div></div>
-    <div class="data-item"><div class="data-cell">Dead-end Passage: strong infrasound at 5.13 Hz<span class="src">Andrew Collins / Rodney Hale, 2019</span></div><div class="data-cell">Confirmed on multiple recording devices in silence. Passage acts as Helmholtz resonator. 5.13 Hz is within ELF range.</div></div>
-    <div class="data-item"><div class="data-cell">Six independent research teams: ancient stone chambers resonate 95–120 Hz regardless of shape<span class="src">ALBA Project synthesis — Sivan 2026; three results peer-reviewed in indexed journals</span></div><div class="data-cell">40 years, no communication between teams, same frequency band. Cross-site convergence strongly suggests design criterion.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">LF resonances 0.5–20 Hz present in King's Chamber in silence<span class="src">Tom Danley, acoustics engineer (NASA contractor), 1997</span></div>
+        <div class="data-cell">Present without active excitation. Pattern roughly forms F# chord across multiple octaves. Stone type assessed as deliberately selected to enhance these vibrations. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Frequency spectrum graph showing the low-frequency acoustic resonances measured in the King's Chamber by Tom Danley in 1997 without any active sound source">
+        <div class="data-item-expand-caption">placeholder — replace with: frequency spectrum plot of Danley's measurements, or photograph of the King's Chamber interior with measurement equipment</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">King's Chamber resonance ~121 Hz; sarcophagus resonance ~117 Hz<span class="src">John Reid, acoustic engineer, 1997</span></div>
+        <div class="data-cell">Two slightly offset resonances — beat frequency matches resting heartbeat. Sarcophagus as tuned resonator within chamber. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Acoustic measurement diagram showing the 121 Hz King's Chamber resonance and 117 Hz sarcophagus resonance measured by John Reid with the resulting 4 Hz beat frequency">
+        <div class="data-item-expand-caption">placeholder — replace with: Reid's frequency response plots or cymatic pattern photographs from the King's Chamber measurements</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Sarcophagus resonates at 438 Hz (A440 calibrated)<span class="src">Paul Horn, musician, calibrated Korg tuner, 1976; confirmed by Dunn 1998</span></div>
+        <div class="data-cell">Independent calibrated measurement confirms sarcophagus as a tuned acoustic element. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the granite sarcophagus in the King's Chamber of the Khufu pyramid — the object Paul Horn measured resonating at 438 Hz using a calibrated tuner">
+        <div class="data-item-expand-caption">placeholder — replace with: photograph of the King's Chamber sarcophagus (coffer), ideally showing its dimensions</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">King's Chamber: 49.5 Hz dominant, spikes at 30.5, 33 Hz, cluster 30–130 Hz<span class="src">Andrew Collins, 2019, smartphone recorders in silence</span></div>
+        <div class="data-cell">Lowest-budget measurement; consistent with Danley at LF range. VLF and infrasound range confirmed. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Frequency spectrum from Andrew Collins 2019 measurements showing the 49.5 Hz dominant resonance and spectral cluster between 30 and 130 Hz in the King's Chamber">
+        <div class="data-item-expand-caption">placeholder — replace with: Collins 2019 spectrum plot or spectrogram screenshot from the King's Chamber recording</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Queen's Chamber: dominant spikes at 118 Hz and 120 Hz<span class="src">Andrew Collins, 2019</span></div>
+        <div class="data-cell">Different granite chamber, same frequency band as King's Chamber — consistent with material-driven rather than room-mode resonance. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the Queen's Chamber interior showing its limestone walls and pointed ceiling — the room where Collins measured resonances at 118 and 120 Hz matching the King's Chamber band">
+        <div class="data-item-expand-caption">placeholder — replace with: Queen's Chamber interior photograph, or Collins 2019 Queen's Chamber spectrum plot</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Dead-end Passage: strong infrasound at 5.13 Hz<span class="src">Andrew Collins / Rodney Hale, 2019</span></div>
+        <div class="data-cell">Confirmed on multiple recording devices in silence. Passage acts as Helmholtz resonator. 5.13 Hz is within ELF range. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram or photograph of the Dead-end Passage in the subterranean chamber of the Great Pyramid where infrasound at 5.13 Hz was detected">
+        <div class="data-item-expand-caption">placeholder — replace with: subterranean chamber passage photograph or Collins/Hale 2019 infrasound spectrum plot showing 5.13 Hz spike</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Six independent research teams: ancient stone chambers resonate 95–120 Hz regardless of shape<span class="src">ALBA Project synthesis — Sivan 2026; three results peer-reviewed in indexed journals</span></div>
+        <div class="data-cell">40 years, no communication between teams, same frequency band. Cross-site convergence strongly suggests design criterion. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Collage of six ancient stone chambers from different cultures and continents all showing acoustic resonance in the 95-120 Hz frequency band">
+        <div class="data-item-expand-caption">placeholder — replace with: ALBA Project comparative site photographs or frequency comparison chart across the six chambers</div>
+      </div>
+    </div>
   </div>
 
   <div class="data-domain">
     <div class="data-domain-title">Stellar alignments (independently verified)</div>
-    <div class="data-item"><div class="data-cell">North shaft of King's Chamber → Thuban (α Draconis) at lower culmination, ~2,600 BCE<span class="src">Badawy 1964, Trimble 1964, confirmed Bauval 1994</span></div><div class="data-cell">Geometrically confirmed by independent astronomical calculation. Not contested.</div></div>
-    <div class="data-item"><div class="data-cell">North shaft of Queen's Chamber → Kochab (β Ursae Minoris), same epoch<span class="src">Bauval and Gilbert 1994, confirmed multiple</span></div><div class="data-cell">Geometrically confirmed. Not contested.</div></div>
-    <div class="data-item"><div class="data-cell">South shaft of King's Chamber → Alnitak (ζ Orionis / Orion's Belt), same epoch<span class="src">Bauval and Gilbert 1994</span></div><div class="data-cell">Geometrically confirmed. Alnitak is immediately above the constellation Lepus.</div></div>
-    <div class="data-item"><div class="data-cell">South shaft of Queen's Chamber → Sirius (α Canis Majoris), same epoch<span class="src">Bauval and Gilbert 1994</span></div><div class="data-cell">Geometrically confirmed. Four shafts together form a celestial navigation fix constraining Grand Gallery azimuth.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">North shaft of King's Chamber → Thuban (α Draconis) at lower culmination, ~2,600 BCE<span class="src">Badawy 1964, Trimble 1964, confirmed Bauval 1994</span></div>
+        <div class="data-cell">Geometrically confirmed by independent astronomical calculation. Not contested. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Star chart showing the position of Thuban in the constellation Draco as it appeared from Giza around 2600 BCE aligned with the northern shaft of the King's Chamber">
+        <div class="data-item-expand-caption">placeholder — replace with: star chart showing Thuban's position at the shaft's elevation angle circa 2600 BCE, or shaft diagram with star alignment</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">North shaft of Queen's Chamber → Kochab (β Ursae Minoris), same epoch<span class="src">Bauval and Gilbert 1994, confirmed multiple</span></div>
+        <div class="data-cell">Geometrically confirmed. Not contested. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Star chart showing Kochab in Ursa Minor aligned with the northern shaft of the Queen's Chamber at approximately 2600 BCE from the Giza plateau">
+        <div class="data-item-expand-caption">placeholder — replace with: star chart showing Kochab at the Queen's Chamber north shaft elevation circa 2600 BCE</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">South shaft of King's Chamber → Alnitak (ζ Orionis / Orion's Belt), same epoch<span class="src">Bauval and Gilbert 1994</span></div>
+        <div class="data-cell">Geometrically confirmed. Alnitak is immediately above the constellation Lepus. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Star chart showing Alnitak at the foot of Orion's Belt aligned with the southern shaft of the King's Chamber, with Lepus visible directly below in the same sky sector">
+        <div class="data-item-expand-caption">placeholder — replace with: star chart showing Alnitak meridian transit at King's Chamber south shaft angle, with Lepus constellation indicated below</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">South shaft of Queen's Chamber → Sirius (α Canis Majoris), same epoch<span class="src">Bauval and Gilbert 1994</span></div>
+        <div class="data-cell">Geometrically confirmed. Four shafts together form a celestial navigation fix constraining Grand Gallery azimuth. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram showing all four pyramid shafts and their stellar targets simultaneously — Thuban, Kochab north and Alnitak, Sirius south — forming a four-point celestial navigation fix">
+        <div class="data-item-expand-caption">placeholder — replace with: four-shaft diagram showing all stellar targets simultaneously, demonstrating the navigation fix geometry</div>
+      </div>
+    </div>
   </div>
 
   <div class="data-domain">
     <div class="data-domain-title">Geometric and mathematical encodings (independently verifiable calculations)</div>
-    <div class="data-item"><div class="data-cell">King's Chamber unique triangle: area = perimeter = shorter leg² — holds only in metres<span class="src">Voron 2019</span></div><div class="data-cell">Only right-angled triangle with this property. Requires transcendental equation to solve. Demands metric system knowledge.</div></div>
-    <div class="data-item"><div class="data-cell">Second King's Chamber triangle: sides in ratio of smallest Pythagorean triple, unit = φ²<span class="src">Voron 2019</span></div><div class="data-cell">Holds only in metres. Independent confirmation of metric system encoding in same room.</div></div>
-    <div class="data-item"><div class="data-cell">Khufu apex latitude: 29.9792458°N = speed of light 299,792,458 m/s to 7 significant figures<span class="src">Voron 2022</span></div><div class="data-cell">Verifiable directly via Google Maps. Site selected for this latitude, or latitude calculated from the constant.</div></div>
-    <div class="data-item"><div class="data-cell">Menkaure surface areas ≈ F21 (10,946 m²) and F22 (17,711 m²)<span class="src">Voron 2025</span></div><div class="data-cell">Fibonacci numbers 21 and 22. Calculated in metric units.</div></div>
-    <div class="data-item"><div class="data-cell">Khafre surface areas ≈ F24 (46,368 m²) and F25 (75,025 m²)<span class="src">Voron 2025</span></div><div class="data-cell">Fibonacci numbers 24 and 25. Sequential series continues.</div></div>
-    <div class="data-item"><div class="data-cell">Khufu surface areas ≈ F27 and F28 in Royal Cubits<span class="src">Voron 2025</span></div><div class="data-cell">Complete sequential series F21–F28 across three pyramids, two unit systems simultaneously.</div></div>
-    <div class="data-item"><div class="data-cell">Khufu height with casing: 147.59m = Earth's perihelion distance at 1m:1Mkm scale<span class="src">Voron 2022</span></div><div class="data-cell">Establishes AU scale unit for the spatial map.</div></div>
-    <div class="data-item"><div class="data-cell">Sphinx→Khufu: 3.89 AU · Sphinx→Khafre: 4.57 AU · Sphinx→Menkaure: 6.54 AU<span class="src">Voron 2022</span></div><div class="data-cell">At 147.59m = 1 AU. Encodes a planetary map of a specific star system with the Sphinx as the star.</div></div>
-    <div class="data-item"><div class="data-cell">Habitable zone of Zeta Leporis (14× solar luminosity): √14 ≈ 3.74–3.9 AU<span class="src">Standard stellar physics formula; stellar luminosity from Hipparcos</span></div><div class="data-cell">Matches Sphinx→Khufu distance of 3.89 AU to measurement precision.</div></div>
-    <div class="data-item"><div class="data-cell">Grand Gallery path length to outer surface: ~70m; Zeta Leporis distance: 70.5 light years<span class="src">Voron 2022; Hipparcos/Gaia stellar catalogue</span></div><div class="data-cell">At 1m:1 light year. Zeta Leporis lies in constellation Lepus, the sector toward which four-shaft fix constrains the gallery.</div></div>
-    <div class="data-item"><div class="data-cell">Sarcophagus offsets: Khufu ~15.5m west of Khafre–Menkaure line; Menkaure ~10m east<span class="src">Voron 2022 (from surveyed pyramid positions)</span></div><div class="data-cell">Total 25.5m offset across 3-element array. No structural or aesthetic explanation — consistent with phased array beam steering geometry.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">King's Chamber unique triangle: area = perimeter = shorter leg² — holds only in metres<span class="src">Voron 2019</span></div>
+        <div class="data-cell">Only right-angled triangle with this property. Requires transcendental equation to solve. Demands metric system knowledge. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Geometric diagram of the King's Chamber floor plan with the unique right-angle triangle inscribed, showing the annotated dimensions in metres where area equals perimeter equals the square of the shorter leg">
+        <div class="data-item-expand-caption">placeholder — replace with: Voron's King's Chamber triangle diagram with annotated metric values demonstrating the mathematical property</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Second King's Chamber triangle: sides in ratio of smallest Pythagorean triple, unit = φ²<span class="src">Voron 2019</span></div>
+        <div class="data-cell">Holds only in metres. Independent confirmation of metric system encoding in same room. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Geometric diagram of the second right-angle triangle inscribed in the King's Chamber geometry showing sides proportional to the smallest Pythagorean triple with unit equal to the square of the golden ratio">
+        <div class="data-item-expand-caption">placeholder — replace with: Voron's second triangle diagram annotated with Pythagorean triple ratios and φ² unit derivation</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Khufu apex latitude: 29.9792458°N = speed of light 299,792,458 m/s to 7 significant figures<span class="src">Voron 2022</span></div>
+        <div class="data-cell">Verifiable directly via Google Maps. Site selected for this latitude, or latitude calculated from the constant. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Google Maps screenshot showing the latitude coordinate of the Khufu pyramid apex reading 29.9792458 degrees north latitude matching the speed of light digits">
+        <div class="data-item-expand-caption">placeholder — replace with: Google Maps or satellite coordinate screenshot of Khufu pyramid apex showing latitude 29.9792458°N</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Menkaure surface areas ≈ F21 (10,946 m²) and F22 (17,711 m²)<span class="src">Voron 2025</span></div>
+        <div class="data-cell">Fibonacci numbers 21 and 22. Calculated in metric units. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the Menkaure pyramid with annotated surface area calculations showing values matching the 21st and 22nd Fibonacci numbers in square metres">
+        <div class="data-item-expand-caption">placeholder — replace with: Menkaure pyramid photograph with calculated surface area values annotated, or Voron's Fibonacci table for all three pyramids</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Khafre surface areas ≈ F24 (46,368 m²) and F25 (75,025 m²)<span class="src">Voron 2025</span></div>
+        <div class="data-cell">Fibonacci numbers 24 and 25. Sequential series continues. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the Khafre pyramid with annotated surface area calculations showing values matching the 24th and 25th Fibonacci numbers in square metres">
+        <div class="data-item-expand-caption">placeholder — replace with: Khafre pyramid photograph with calculated surface area values annotated</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Khufu surface areas ≈ F27 and F28 in Royal Cubits<span class="src">Voron 2025</span></div>
+        <div class="data-cell">Complete sequential series F21–F28 across three pyramids, two unit systems simultaneously. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram showing the complete Fibonacci sequence F21 through F28 mapped across the three Giza pyramids in both metric and Royal Cubit unit systems">
+        <div class="data-item-expand-caption">placeholder — replace with: Voron's complete Fibonacci mapping table showing F21–F28 across all three pyramids in both unit systems</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Khufu height with casing: 147.59m = Earth's perihelion distance at 1m:1Mkm scale<span class="src">Voron 2022</span></div>
+        <div class="data-cell">Establishes AU scale unit for the spatial map. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram showing the restored height of the Khufu pyramid at 147.59 metres equated to the Earth-Sun perihelion distance of 147 million kilometres establishing the astronomical unit scale">
+        <div class="data-item-expand-caption">placeholder — replace with: scale diagram equating 147.59m pyramid height to 147 million km Earth-Sun perihelion distance</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Sphinx→Khufu: 3.89 AU · Sphinx→Khafre: 4.57 AU · Sphinx→Menkaure: 6.54 AU<span class="src">Voron 2022</span></div>
+        <div class="data-cell">At 147.59m = 1 AU. Encodes a planetary map of a specific star system with the Sphinx as the star. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Top-down aerial map of the Giza plateau with lines drawn from the Sphinx head to each pyramid apex annotated with distances in astronomical units at the 147.59m equals 1AU scale">
+        <div class="data-item-expand-caption">placeholder — replace with: Voron's Giza plateau map showing Sphinx-to-pyramid distances in AU, ideally overlaid on satellite imagery</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Habitable zone of Zeta Leporis (14× solar luminosity): √14 ≈ 3.74–3.9 AU<span class="src">Standard stellar physics formula; stellar luminosity from Hipparcos</span></div>
+        <div class="data-cell">Matches Sphinx→Khufu distance of 3.89 AU to measurement precision. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Comparison diagram showing the Zeta Leporis star system with its habitable zone at 3.87-3.9 AU alongside the Giza plateau map at the same scale showing the Sphinx to Khufu distance of 3.89 AU">
+        <div class="data-item-expand-caption">placeholder — replace with: side-by-side comparison of Zeta Leporis habitable zone diagram and Giza plateau map at equivalent AU scale</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Grand Gallery path length to outer surface: ~70m; Zeta Leporis distance: 70.5 light years<span class="src">Voron 2022; Hipparcos/Gaia stellar catalogue</span></div>
+        <div class="data-cell">At 1m:1 light year. Zeta Leporis lies in constellation Lepus, the sector toward which four-shaft fix constrains the gallery. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Cross-section diagram of the Khufu pyramid showing the Grand Gallery path length of 70 metres annotated alongside the Lepus constellation and Zeta Leporis at 70.5 light years distance">
+        <div class="data-item-expand-caption">placeholder — replace with: Grand Gallery cross-section with 70m path length annotated, alongside star map showing Zeta Leporis at 70.5 ly</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Sarcophagus offsets: Khufu ~15.5m west of Khafre–Menkaure line; Menkaure ~10m east<span class="src">Voron 2022 (from surveyed pyramid positions)</span></div>
+        <div class="data-cell">Total 25.5m offset across 3-element array. No structural or aesthetic explanation — consistent with phased array beam steering geometry. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Top-down diagram of the three Giza pyramids showing the positions of the three sarcophagi and the measured offsets of 15.5 metres west and 10 metres east from the alignment axis">
+        <div class="data-item-expand-caption">placeholder — replace with: Voron's sarcophagus offset diagram — top-down view of plateau with sarcophagus positions and offset measurements annotated</div>
+      </div>
+    </div>
   </div>
 
   <div class="data-domain">
     <div class="data-domain-title">Geological, hydrological, and dating data</div>
-    <div class="data-item"><div class="data-cell">Sphinx enclosure walls: vertical precipitation erosion profile, not wind/sand scour<span class="src">Robert Schoch, Boston University, peer-reviewed 1992</span></div><div class="data-cell">Vertical undulating fissures from rainfall vs horizontal scour from wind. Inconsistent with arid post-5000 BCE climate.</div></div>
-    <div class="data-item"><div class="data-cell">Seismic subsurface weathering: east/north/south sides 1.2–2.5m; west side 1.2m<span class="src">Schoch 1992</span></div><div class="data-cell">Front/sides 50–100% older than back. Minimum age ~7,000 BCE; preferred estimate ~10,000–12,000 BCE.</div></div>
-    <div class="data-item"><div class="data-cell">Khufu branch of Nile confirmed running at base of valley temples during Old Kingdom<span class="src">PNAS 2022 (radar satellite, geophysics, deep soil coring); Nature 2024</span></div><div class="data-cell">Causeways terminated at branch. Valley temples functioned as river harbours. High-water level during Khufu, Khafre, Menkaure reigns.</div></div>
-    <div class="data-item"><div class="data-cell">Nile now ~8km east; Khufu branch dried since end of dynastic period<span class="src">PNAS 2022</span></div><div class="data-cell">Ground plane disconnected from system. Explains apparent non-operation today.</div></div>
-    <div class="data-item"><div class="data-cell">~20 North African Humid Periods over past 800,000 years, precession-paced ~23,000yr cycle<span class="src">Nature Communications 2023</span></div><div class="data-cell">Precipitation erosion on Sphinx consistent with any humid period — not just most recent. Age range is genuinely open upward.</div></div>
-    <div class="data-item"><div class="data-cell">Surface luminescence dating (SLD/TL/OSL) applied to Giza plateau structures: Valley Temple, Sphinx Temple, Menkaure pyramid<span class="src">Liritzis and Vafiadou, Journal of Cultural Heritage 2015</span></div><div class="data-cell">Results broadly confirm Old Kingdom dates (1st–3rd millennia BCE) for surface blocks sampled. One Valley Temple sample returned ages predating the conventional date beyond one standard error. Authors explicitly flag probable reuse of structures as a confounding factor. Critically: the blocks available for sampling are surface and casing blocks consistent with Old Kingdom finishing work — not the original core masonry or Sphinx enclosure floor. These are the surfaces Merer's papyrus describes being worked. The test required by this model — SLD of the Sphinx enclosure floor and interior granite chamber surfaces — has not been done.</div></div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Sphinx enclosure walls: vertical precipitation erosion profile, not wind/sand scour<span class="src">Robert Schoch, Boston University, peer-reviewed 1992</span></div>
+        <div class="data-cell">Vertical undulating fissures from rainfall vs horizontal scour from wind. Inconsistent with arid post-5000 BCE climate. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the Sphinx enclosure walls showing the vertical undulating erosion channels consistent with prolonged rainfall rather than the horizontal striations that wind and sand erosion produces">
+        <div class="data-item-expand-caption">placeholder — replace with: photograph of Sphinx enclosure wall showing vertical precipitation erosion profile (Schoch's primary evidence)</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Seismic subsurface weathering: east/north/south sides 1.2–2.5m; west side 1.2m<span class="src">Schoch 1992</span></div>
+        <div class="data-cell">Front/sides 50–100% older than back. Minimum age ~7,000 BCE; preferred estimate ~10,000–12,000 BCE. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Diagram of the Sphinx enclosure showing Schoch's seismic survey results with subsurface weathering depths annotated on each side — deeper on the east north and south than the west">
+        <div class="data-item-expand-caption">placeholder — replace with: Schoch's seismic weathering depth diagram showing differential depths on each side of the Sphinx enclosure</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Khufu branch of Nile confirmed running at base of valley temples during Old Kingdom<span class="src">PNAS 2022 (radar satellite, geophysics, deep soil coring); Nature 2024</span></div>
+        <div class="data-cell">Causeways terminated at branch. Valley temples functioned as river harbours. High-water level during Khufu, Khafre, Menkaure reigns. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Satellite radar imagery from the PNAS 2022 study showing the buried course of the extinct Khufu branch of the Nile running directly alongside the Giza plateau valley temples">
+        <div class="data-item-expand-caption">placeholder — replace with: Ghoneim et al. PNAS 2022 radar satellite imagery showing the Khufu branch trace alongside the valley temples</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Nile now ~8km east; Khufu branch dried since end of dynastic period<span class="src">PNAS 2022</span></div>
+        <div class="data-cell">Ground plane disconnected from system. Explains apparent non-operation today. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Map comparison showing the ancient position of the Khufu Nile branch directly beside the Giza plateau against the current Nile position approximately 8 kilometres to the east">
+        <div class="data-item-expand-caption">placeholder — replace with: overlay map comparing ancient Khufu branch position vs current Nile course showing the 8km eastward migration</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">~20 North African Humid Periods over past 800,000 years, precession-paced ~23,000yr cycle<span class="src">Nature Communications 2023</span></div>
+        <div class="data-cell">Precipitation erosion on Sphinx consistent with any humid period — not just most recent. Age range is genuinely open upward. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Climate timeline chart showing the approximately 20 North African Humid Periods over the past 800,000 years with the most recent ending around 5000 BCE and the Sphinx minimum age indicated">
+        <div class="data-item-expand-caption">placeholder — replace with: Nature Communications 2023 paleoclimate timeline showing North African Humid Period cycles over 800,000 years</div>
+      </div>
+    </div>
+
+    <div class="data-item" onclick="this.classList.toggle('open')">
+      <div class="data-item-header">
+        <div class="data-cell">Surface luminescence dating (SLD/TL/OSL) applied to Giza plateau structures: Valley Temple, Sphinx Temple, Menkaure pyramid<span class="src">Liritzis and Vafiadou, Journal of Cultural Heritage 2015</span></div>
+        <div class="data-cell">Results broadly confirm Old Kingdom dates for surface blocks sampled. One Valley Temple anomaly predates conventional date. Authors flag probable reuse. The tests this model requires — SLD of Sphinx enclosure floor and interior granite chamber surfaces — have not been done. <span class="data-item-toggle-icon">▼</span></div>
+      </div>
+      <div class="data-item-expand">
+        <img src="placeholder.jpg" alt="Photograph of the Valley Temple at Giza showing its massive granite and limestone block construction — the structure where Liritzis and Vafiadou 2015 applied surface luminescence dating and found one anomalous result predating the conventional construction date">
+        <div class="data-item-expand-caption">placeholder — replace with: Valley Temple exterior or interior photograph, or Liritzis and Vafiadou 2015 sample location diagram</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -462,19 +1180,239 @@
   <p>At dawn, sunlight strikes the electrum cap. Current begins to flow down through the pyramid body into the water table and returns via the Nile. The system is pumped but not yet oscillating — energy is being injected but no coherent signal exists yet. Someone strikes the sarcophagus. The granite box rings at its natural frequency — approximately 117 to 121 Hz — and that mechanical impulse couples into the pressurised medium filling the cavity. The oscillation begins to build. On each round trip through the cavity, the gain medium amplifies it slightly. The Tura limestone casing at the boundary reflects most of the energy back inward, allowing amplitude to accumulate over many cycles rather than escaping immediately. The nested architecture — high-Q granite inner cavity, low-Q limestone outer body, distinct dielectric boundary between them — concentrates the oscillating energy progressively inward. The pump energy from the pyramidion prevents the oscillation from decaying between cycles. After some number of round trips, the system reaches a stable operating state: a coherent, single-frequency oscillation at the resonant frequency of the granite cavity, sustained by the pump, seeded by the initial impulse, amplified by the gain medium on each pass, and partially leaking through the dielectric boundary as the output.</p>
   <p>That output exits through two channels simultaneously. The first is an ELF ground wave — an extremely low frequency signal — that couples into the Nile water table and propagates through the Earth. The second exits through the Grand Gallery at 26.3° elevation: directed, coherent, and polarised. The character of that second output is the central open question of the model.</p>
 
-  <table class="analogy-table">
-    <thead><tr><th>Component</th><th>Bandpass filter</th><th>Klystron</th><th>Laser / parametric oscillator</th></tr></thead>
-    <tbody>
-      <tr><td>Nested Q architecture</td><td class="score-partial">Partial</td><td class="score-partial">Partial</td><td class="score-strong">Strong match</td></tr>
-      <tr><td>Pump (pyramidion → Seebeck effect)</td><td class="score-weak">Not applicable — passive</td><td class="score-partial">Electron beam (different)</td><td class="score-strong">Exact match</td></tr>
-      <tr><td>Seed oscillator (sarcophagus strike)</td><td class="score-weak">Not applicable</td><td class="score-weak">Not applicable</td><td class="score-strong">Exact match — Q-switch seed</td></tr>
-      <tr><td>Partial reflector (Tura limestone)</td><td class="score-partial">Dielectric Q-mult only</td><td class="score-weak">Shielding, not reflection</td><td class="score-strong">Output coupler mirror</td></tr>
-      <tr><td>Gain medium (pressurised ice)</td><td class="score-weak">No gain — passive</td><td class="score-partial">Velocity modulation (different)</td><td class="score-strong">Parametric amplification</td></tr>
-      <tr><td>Polarised directed output (galleries)</td><td class="score-partial">Bandpass output only</td><td class="score-partial">Output waveguide, no polarisation split</td><td class="score-strong">Polarised coherent beam</td></tr>
-      <tr><td>Three-element mode-locking (three pyramidions)</td><td class="score-weak">Not applicable</td><td class="score-partial">Cavity tuning only</td><td class="score-strong">Mode-locking — exact match</td></tr>
-      <tr><td><strong>Score with full component list</strong></td><td class="score-weak">4/7 — original best choice</td><td class="score-partial">4/7 — mechanism mismatch</td><td class="score-strong">6–7/7 — strongest match</td></tr>
-    </tbody>
-  </table>
+  <div class="analogy-accordion">
+
+    <!-- header row -->
+    <div class="analogy-accordion-row" style="cursor:default">
+      <div class="analogy-accordion-header is-head">
+        <div class="analogy-col th is-label">Component</div>
+        <div class="analogy-col th">Bandpass filter</div>
+        <div class="analogy-col th">Klystron</div>
+        <div class="analogy-col th">Laser / parametric oscillator</div>
+      </div>
+    </div>
+  
+    <!-- row 1 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Nested Q architecture <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-partial">Partial</div>
+        <div class="analogy-col score-partial">Partial</div>
+        <div class="analogy-col score-strong">Strong match</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Nested Q architecture diagram showing high-Q inner cavity, low-Q outer body, and dielectric boundary">
+            <div class="analogy-img-caption">placeholder — nested Q architecture schematic</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Bandpass filter cross-section showing resonator topology">
+            <div class="analogy-img-caption">placeholder — bandpass filter resonator</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron cavity diagram showing resonant cavities and beam path">
+            <div class="analogy-img-caption">placeholder — klystron cavity structure</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Laser cavity diagram showing gain medium between two mirrors with Q-multiplied inner resonator">
+            <div class="analogy-img-caption">placeholder — laser cavity / parametric oscillator</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 2 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Pump (pyramidion → Seebeck effect) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-weak">Not applicable — passive</div>
+        <div class="analogy-col score-partial">Electron beam (different)</div>
+        <div class="analogy-col score-strong">Exact match</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Photograph of the Khufu pyramid apex where the electrum pyramidion would have sat, acting as the thermoelectric pump">
+            <div class="analogy-img-caption">placeholder — pyramid apex / pyramidion location</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Diagram showing that a passive bandpass filter has no pump — it requires no energy source beyond the input signal">
+            <div class="analogy-img-caption">placeholder — passive filter, no pump required</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron schematic showing the electron beam gun as the energy source — a different pump mechanism to thermoelectric">
+            <div class="analogy-img-caption">placeholder — klystron electron beam gun (pump)</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Seebeck effect diagram showing temperature gradient across a conductor driving electrical current — the mechanism of the electrum pyramidion pump">
+            <div class="analogy-img-caption">placeholder — Seebeck thermoelectric effect diagram</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 3 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Seed oscillator (sarcophagus strike) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-weak">Not applicable</div>
+        <div class="analogy-col score-weak">Not applicable</div>
+        <div class="analogy-col score-strong">Exact match — Q-switch seed</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Photograph of the granite sarcophagus in the King's Chamber — the component identified as the seed oscillator, placed before passages were sealed">
+            <div class="analogy-img-caption">placeholder — King's Chamber sarcophagus in situ</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Diagram showing that bandpass filters are always-on passive devices with no seed or trigger mechanism required">
+            <div class="analogy-img-caption">placeholder — bandpass filter, always-on, no seed</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron schematic — the beam is continuous, no discrete seed event is used to initiate oscillation">
+            <div class="analogy-img-caption">placeholder — klystron continuous beam, no seed event</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Q-switched laser diagram showing the seed photon initiating the cascade — analogous to the sarcophagus strike initiating cavity oscillation">
+            <div class="analogy-img-caption">placeholder — Q-switched laser seed photon cascade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 4 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Partial reflector (Tura limestone) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-partial">Dielectric Q-mult only</div>
+        <div class="analogy-col score-weak">Shielding, not reflection</div>
+        <div class="analogy-col score-strong">Output coupler mirror</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Photograph of remaining Tura limestone casing stones at the base of the Great Pyramid showing the chemically distinct outer boundary layer">
+            <div class="analogy-img-caption">placeholder — Tura limestone casing stones at pyramid base</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Dielectric resonator diagram showing how the boundary layer provides Q-multiplication through partial internal reflection">
+            <div class="analogy-img-caption">placeholder — dielectric boundary Q-multiplication diagram</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron body diagram showing its metallic shielding which absorbs rather than reflects — unlike a partial mirror">
+            <div class="analogy-img-caption">placeholder — klystron shielding body (absorbs, not reflects)</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Laser output coupler mirror diagram showing the partial reflector that lets a controlled fraction of coherent energy escape as the output beam">
+            <div class="analogy-img-caption">placeholder — laser output coupler partial mirror</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 5 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Gain medium (pressurised ice) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-weak">No gain — passive</div>
+        <div class="analogy-col score-partial">Velocity modulation (different)</div>
+        <div class="analogy-col score-strong">Parametric amplification</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Diagram of the sealed King's Chamber under pyramidal load pressure with the proposed pressurised ice medium filling the granite cavity">
+            <div class="analogy-img-caption">placeholder — sealed King's Chamber with pressurised ice hypothesis</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Passive bandpass filter schematic — no gain medium present, output amplitude always less than or equal to input">
+            <div class="analogy-img-caption">placeholder — passive filter, no gain medium</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron velocity modulation diagram showing the electron beam being bunched to transfer energy to the microwave field">
+            <div class="analogy-img-caption">placeholder — klystron velocity modulation gain mechanism</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Parametric amplifier diagram showing a nonlinear medium under cyclic stress transferring energy between frequency components to produce gain">
+            <div class="analogy-img-caption">placeholder — parametric amplification in nonlinear medium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 6 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Polarised directed output (galleries) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-partial">Bandpass output only</div>
+        <div class="analogy-col score-partial">Output waveguide, no polarisation split</div>
+        <div class="analogy-col score-strong">Polarised coherent beam</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Photograph looking up the Grand Gallery at 26.3 degrees showing the directed output channel of the pyramid system">
+            <div class="analogy-img-caption">placeholder — Grand Gallery interior showing directed output angle</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Bandpass filter output diagram showing frequency-selected but unpolarised and undirected output signal">
+            <div class="analogy-img-caption">placeholder — bandpass filter unpolarised output</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron output waveguide diagram showing directed but unpolarised microwave output without the two-gallery polarisation splitting mechanism">
+            <div class="analogy-img-caption">placeholder — klystron output waveguide, no polarisation split</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Laser beam diagram showing polarised coherent output — stable phase, single frequency, single direction, defined polarisation state">
+            <div class="analogy-img-caption">placeholder — laser polarised coherent beam output</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- row 7 -->
+    <div class="analogy-accordion-row" onclick="this.classList.toggle('open')">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label">Three-element mode-locking (three pyramidions) <span class="analogy-toggle-icon">▼</span></div>
+        <div class="analogy-col score-weak">Not applicable</div>
+        <div class="analogy-col score-partial">Cavity tuning only</div>
+        <div class="analogy-col score-strong">Mode-locking — exact match</div>
+      </div>
+      <div class="analogy-expand">
+        <div class="analogy-img-grid">
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Aerial photograph of the three Giza pyramids showing the three electrum pyramidion positions — the mode-locking elements of the phased array">
+            <div class="analogy-img-caption">placeholder — three Giza pyramids aerial view showing pyramidion positions</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Bandpass filter array diagram — independent filters with no mode-locking mechanism between them">
+            <div class="analogy-img-caption">placeholder — independent bandpass filters, no mode-locking</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Klystron cavity tuning diagram showing independent cavity frequency adjustment without array-level mode synchronisation">
+            <div class="analogy-img-caption">placeholder — klystron cavity tuning, no cross-element locking</div>
+          </div>
+          <div class="analogy-img-item">
+            <img src="placeholder.jpg" alt="Mode-locked laser array diagram showing multiple cavities synchronised to the same resonant mode family through a shared metallic boundary condition">
+            <div class="analogy-img-caption">placeholder — mode-locked laser array synchronisation diagram</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- score row -->
+    <div class="analogy-accordion-row score-row" style="cursor:default">
+      <div class="analogy-accordion-header">
+        <div class="analogy-col is-label"><strong>Score with full component list</strong></div>
+        <div class="analogy-col score-weak">4/7 — original best choice</div>
+        <div class="analogy-col score-partial">4/7 — mechanism mismatch</div>
+        <div class="analogy-col score-strong">6–7/7 — strongest match</div>
+      </div>
+    </div>
+  
+  </div>
 
   <div class="callout">
     <div class="callout-label">Why coherence is the critical consequence</div>
@@ -489,13 +1427,27 @@
   <p>The Giza complex is not just the three pyramids. It is a complete signal processing chain from energy input to directed output, in which every stage conditions the signal before passing it to the next. The chain maps onto standard microwave engineering nomenclature with unusual precision.</p>
 
   <div class="signal-flow">
-    <div class="sf-node"><div class="sf-label">Source</div><div class="sf-name">Nile river</div><div class="sf-note">Broadband mechanical noise + ground plane</div></div>
-    <div class="sf-node"><div class="sf-label">Collector</div><div class="sf-name">Sphinx</div><div class="sf-note">Horn antenna / impedance transition</div></div>
-    <div class="sf-node highlight"><div class="sf-label">Filter 1</div><div class="sf-name">Sphinx Temple</div><div class="sf-note">Phononic crystal bandpass</div></div>
-    <div class="sf-node highlight"><div class="sf-label">Filter 2</div><div class="sf-name">Khafre Temple</div><div class="sf-note">T-junction + slow-wave + notch</div></div>
-    <div class="sf-node"><div class="sf-label">TX line</div><div class="sf-name">Causeways</div><div class="sf-note">Rectangular waveguide Z₀</div></div>
-    <div class="sf-node highlight"><div class="sf-label">Resonator</div><div class="sf-name">3 Pyramids</div><div class="sf-note">Parametric oscillator phased array</div></div>
-    <div class="sf-node"><div class="sf-label">Output</div><div class="sf-name">Dual channel</div><div class="sf-note">ELF ground + directed gallery beam</div></div>
+    <div class="sf-node" onclick="sfModal('Nile River','Source — Broadband mechanical noise + ground plane','placeholder_nile.jpg','The Nile provides the power supply for the entire system. Its annual flood cycle, tidal loading, and the elevated water table beneath the Giza plateau create slowly oscillating mechanical pressure on the limestone bedrock. PNAS 2022 and Nature 2024 confirm the Khufu branch ran directly alongside the valley temples during the operational period. The Nile also serves as the ground plane return path for antenna current, and as the ELF propagation medium for the ground output channel.')">
+      <div class="sf-label">Source</div><div class="sf-name">Nile river</div><div class="sf-note">Broadband mechanical noise + ground plane</div>
+    </div>
+    <div class="sf-node" onclick="sfModal('Sphinx','Collector — Horn antenna / impedance transition','placeholder_sphinx.jpg','The Sphinx transitions a confined waveguide to the impedance of open space by flaring gradually — the same principle used in every satellite dish and radio telescope. Read east to west, it is precisely this geometry: a wide headdress aperture facing the Nile, progressively narrowing through neck and body toward the enclosed temple entrance. It faces due east — the correct orientation for a collector whose energy source is to the east.')">
+      <div class="sf-label">Collector</div><div class="sf-name">Sphinx</div><div class="sf-note">Horn antenna / impedance transition</div>
+    </div>
+    <div class="sf-node highlight" onclick="sfModal('Sphinx Temple','Filter stage 1 — Phononic crystal bandpass','placeholder_sphinx_temple.jpg','The Sphinx Temple\'s 24 granite columns form a phononic crystal — a periodic array of scatterers that creates a bandgap, a range of frequencies that cannot propagate through the array and are reflected back. The open east-facing court is the coupling aperture, a deliberate defect in the crystal admitting energy from a specific direction. Only frequencies outside the bandgap pass through toward the Khafre Temple.')">
+      <div class="sf-label">Filter 1</div><div class="sf-name">Sphinx Temple</div><div class="sf-note">Phononic crystal bandpass</div>
+    </div>
+    <div class="sf-node highlight" onclick="sfModal('Khafre Valley Temple','Filter stage 2 — T-junction + slow-wave + notch','placeholder_khafre_temple.jpg','The Khafre Valley Temple\'s T-shaped hypostyle hall is a T-junction waveguide power divider — a three-port network splitting the incoming signal into two output paths. Its 23 identical rectangular niches are a corrugated slow-wave structure, identical in principle to a travelling-wave tube, creating a notch filter that strips one frequency component — likely near the background Schumann resonance — before the signal reaches the causeway.')">
+      <div class="sf-label">Filter 2</div><div class="sf-name">Khafre Temple</div><div class="sf-note">T-junction + slow-wave + notch</div>
+    </div>
+    <div class="sf-node" onclick="sfModal('Causeways','Transmission line — Rectangular waveguide Z₀','placeholder_causeways.jpg','The enclosed rectangular stone corridors connecting valley temples to pyramids are rectangular waveguides. Cross-sectional dimensions determine the cutoff frequency and characteristic impedance Z₀. The two-stage temple front-end pre-conditions the signal for impedance-matched entry — preventing reflective losses at the junction between causeway and pyramid base.')">
+      <div class="sf-label">TX line</div><div class="sf-name">Causeways</div><div class="sf-note">Rectangular waveguide Z₀</div>
+    </div>
+    <div class="sf-node highlight" onclick="sfModal('Three Pyramids','Resonator array — Parametric oscillator phased array','placeholder_pyramids.jpg','Each pyramid is a Q-multiplied parametric oscillator: high-Q granite inner cavity, low-Q limestone outer body, Tura limestone dielectric boundary. Three such oscillators at specific separations, with the sarcophagus spatial offsets implementing a 25.5m inter-element phase shift, form a coherent phased array. The electrum pyramidions provide the thermoelectric pump. The sarcophagus strike provides the seed. The system builds a single coherent frequency from broadband noise.')">
+      <div class="sf-label">Resonator</div><div class="sf-name">3 Pyramids</div><div class="sf-note">Parametric oscillator phased array</div>
+    </div>
+    <div class="sf-node" onclick="sfModal('Dual Channel Output','Output — ELF ground wave + directed gallery beam','placeholder_output.jpg','The system produces two simultaneous outputs from the same resonant event. The first is an ELF ground wave coupling into the Nile water table and propagating through the Earth — the same principle as military submarine communication systems. The second exits through the Grand Gallery at 26.3° elevation: directed, coherent, and polarised toward the Lepus sector. The character of the gallery output is the central open empirical question of the model.')">
+      <div class="sf-label">Output</div><div class="sf-name">Dual channel</div><div class="sf-note">ELF ground + directed gallery beam</div>
+    </div>
   </div>
 
   <h3>The Nile as source and ground plane</h3>
@@ -562,52 +1514,190 @@
   <h2>Remove any piece and the system degrades predictably</h2>
   <p>The clearest evidence of designed integration rather than accidental configuration is the load-bearing analysis: remove any single component and the system degrades in a specific and predictable way consistent with its identified engineering function.</p>
 
-  <div class="lb-header"><div class="lb-cell">Component</div><div class="lb-cell">Engineering analogue</div><div class="lb-cell">Remove it and you lose…</div></div>
-
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Tura limestone casing</span><br><span style="font-size:0.8rem;color:var(--stone)">Chemically distinct outer skin, now stripped</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Dielectric boundary / output coupler mirror</span></div>
-    <div class="lb-cell"><span class="lb-failure">Impedance mismatch that reflects energy back into the cavity. Q-multiplication collapses. Structure becomes a broadband absorber.</span></div>
+  <div class="lb-header">
+    <div class="lb-cell">Component</div>
+    <div class="lb-cell">Engineering analogue</div>
+    <div class="lb-cell">Remove it and you lose…</div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Polygonal cyclopean jointing</span><br><span style="font-size:0.8rem;color:var(--stone)">Irregular mortarless interlocking masonry</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Phononic bandgap structure / frequency-selective mechanical filter</span></div>
-    <div class="lb-cell"><span class="lb-failure">High-frequency destructive vibration propagates freely. Resonance loses coherence. Structural integrity and acoustic Q lost simultaneously.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Tura limestone casing <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Chemically distinct outer skin, now stripped</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Dielectric boundary / output coupler mirror</span></div>
+      <div class="lb-cell"><span class="lb-failure">Impedance mismatch that reflects energy back into the cavity. Q-multiplication collapses. Structure becomes a broadband absorber.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Remaining Tura limestone casing stones at the base of the Great Pyramid showing the chemically distinct white outer layer">
+          <div class="lb-img-caption">placeholder — surviving Tura casing stones at pyramid base</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Diagram showing dielectric boundary Q-multiplication — how the distinct outer layer reflects energy inward to build amplitude">
+          <div class="lb-img-caption">placeholder — dielectric boundary Q-multiplication diagram</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Aswan granite inner chambers</span><br><span style="font-size:0.8rem;color:var(--stone)">King's Chamber, Queen's Chamber, galleries</span></div>
-    <div class="lb-cell"><span class="lb-analogue">High-Q resonant cavity / piezoelectric transducer</span></div>
-    <div class="lb-cell"><span class="lb-failure">Replace with limestone: lose measured 117–121 Hz acoustic resonance, piezoelectric conversion, and high-Q energy storage needed for amplitude buildup.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Polygonal cyclopean jointing <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Irregular mortarless interlocking masonry</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Phononic bandgap structure / frequency-selective mechanical filter</span></div>
+      <div class="lb-cell"><span class="lb-failure">High-frequency destructive vibration propagates freely. Resonance loses coherence. Structural integrity and acoustic Q lost simultaneously.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Close photograph of the irregular polygonal mortarless masonry joints of the Great Pyramid showing blocks with 8 to 12 faces fitted without mortar">
+          <div class="lb-img-caption">placeholder — polygonal cyclopean masonry joints, Great Pyramid</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Phononic bandgap diagram showing how a periodic structure of irregular joints selectively passes low frequencies while blocking high-frequency destructive vibration">
+          <div class="lb-img-caption">placeholder — phononic bandgap frequency filtering diagram</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Valley temple column arrays</span><br><span style="font-size:0.8rem;color:var(--stone)">24 columns (Sphinx Temple), T-hall array (Khafre Temple)</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Phononic crystal bandpass / corrugated slow-wave / T-junction power divider</span></div>
-    <div class="lb-cell"><span class="lb-failure">Broadband geological noise enters unfiltered. No single frequency can build up. System cannot reach oscillation threshold.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Aswan granite inner chambers <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">King's Chamber, Queen's Chamber, galleries</span></div>
+      <div class="lb-cell"><span class="lb-analogue">High-Q resonant cavity / piezoelectric transducer</span></div>
+      <div class="lb-cell"><span class="lb-failure">Replace with limestone: lose measured 117–121 Hz acoustic resonance, piezoelectric conversion, and high-Q energy storage needed for amplitude buildup.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph of the King's Chamber interior showing the Aswan granite walls ceiling and floor — the high-Q resonant cavity that measures 121 Hz resonance">
+          <div class="lb-img-caption">placeholder — King's Chamber Aswan granite interior</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Diagram comparing acoustic Q factor of granite versus limestone showing why granite was transported 800km rather than using local material">
+          <div class="lb-img-caption">placeholder — granite vs limestone acoustic Q comparison</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">23 statue niches</span><br><span style="font-size:0.8rem;color:var(--stone)">Identical rectangular recesses, Khafre Valley Temple</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Shunt stub resonator bank / notch filter</span></div>
-    <div class="lb-cell"><span class="lb-failure">Schumann resonance background enters unchallenged. System cannot distinguish its output from Earth background noise. SNR collapses.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Valley temple column arrays <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">24 columns (Sphinx Temple), T-hall array (Khafre Temple)</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Phononic crystal bandpass / corrugated slow-wave / T-junction power divider</span></div>
+      <div class="lb-cell"><span class="lb-failure">Broadband geological noise enters unfiltered. No single frequency can build up. System cannot reach oscillation threshold.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph of the Sphinx Temple interior showing the 24 granite columns arranged in a periodic array forming a phononic crystal bandpass filter">
+          <div class="lb-img-caption">placeholder — Sphinx Temple 24-column phononic crystal array</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph of the Khafre Valley Temple T-shaped hypostyle hall showing the T-junction waveguide power divider geometry">
+          <div class="lb-img-caption">placeholder — Khafre Valley Temple T-junction hypostyle hall</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Causeways</span><br><span style="font-size:0.8rem;color:var(--stone)">Enclosed rectangular stone corridors</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Rectangular waveguide / transmission line at Z₀</span></div>
-    <div class="lb-cell"><span class="lb-failure">Energy radiates freely into plateau rather than being guided to pyramid input port. Impedance mismatch causes reflection. Most conditioned signal lost.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">23 statue niches <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Identical rectangular recesses, Khafre Valley Temple</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Shunt stub resonator bank / notch filter</span></div>
+      <div class="lb-cell"><span class="lb-failure">Schumann resonance background enters unchallenged. System cannot distinguish its output from Earth background noise. SNR collapses.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph of the 23 identical rectangular niches in the Khafre Valley Temple walls — the corrugated slow-wave structure that acts as a notch filter">
+          <div class="lb-img-caption">placeholder — Khafre Valley Temple 23 rectangular niches</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Diagram of a shunt stub resonator bank notch filter showing how the 23 quarter-wave stubs strip a specific frequency component from the signal">
+          <div class="lb-img-caption">placeholder — shunt stub notch filter diagram</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Three-pyramid layout with sarcophagus offsets</span><br><span style="font-size:0.8rem;color:var(--stone)">Khufu ~15.5m west; Menkaure ~10m east of alignment</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Phased array element positions / beam-steering geometry</span></div>
-    <div class="lb-cell"><span class="lb-failure">Directional output beam changes azimuth. The specific offset encodes a specific pointing direction. Change offsets and beam points elsewhere.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Causeways <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Enclosed rectangular stone corridors</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Rectangular waveguide / transmission line at Z₀</span></div>
+      <div class="lb-cell"><span class="lb-failure">Energy radiates freely into plateau rather than being guided to pyramid input port. Impedance mismatch causes reflection. Most conditioned signal lost.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph or reconstruction of the enclosed rectangular stone causeways connecting the valley temples to the pyramid bases acting as rectangular waveguides">
+          <div class="lb-img-caption">placeholder — Giza causeway enclosed rectangular cross-section</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Rectangular waveguide diagram showing how cross-sectional dimensions determine cutoff frequency and characteristic impedance Z0">
+          <div class="lb-img-caption">placeholder — rectangular waveguide Z₀ diagram</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Electrum pyramidions</span><br><span style="font-size:0.8rem;color:var(--stone)">Gold-silver alloy capstones, one per pyramid</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Thermoelectric pump / top-loaded monopole antenna / mode-locker</span></div>
-    <div class="lb-cell"><span class="lb-failure">Three simultaneous failures: oscillation rings down; radiation efficiency collapses; three pyramids drift to different resonant modes and array loses coherence.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Three-pyramid layout with sarcophagus offsets <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Khufu ~15.5m west; Menkaure ~10m east of alignment</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Phased array element positions / beam-steering geometry</span></div>
+      <div class="lb-cell"><span class="lb-failure">Directional output beam changes azimuth. The specific offset encodes a specific pointing direction. Change offsets and beam points elsewhere.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Top-down diagram of the three Giza pyramids showing the sarcophagus positions and their measured offsets of 15.5m west and 10m east from the alignment axis">
+          <div class="lb-img-caption">placeholder — sarcophagus offset beam-steering geometry diagram</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Phased array antenna diagram showing how inter-element spatial offsets steer the combined radiation pattern toward a specific azimuth">
+          <div class="lb-img-caption">placeholder — phased array beam steering via element offset</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="load-bearing-item">
-    <div class="lb-cell"><span class="lb-component">Nile river / Khufu branch</span><br><span style="font-size:0.8rem;color:var(--stone)">Adjacent conductive water body; confirmed PNAS 2022</span></div>
-    <div class="lb-cell"><span class="lb-analogue">Power supply bus / ground plane return / ELF propagation medium</span></div>
-    <div class="lb-cell"><span class="lb-failure">Mechanical pump signal disappears. Antenna ground plane return broken. ELF ground wave has no medium. System goes dark. Almost certainly the current state.</span></div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Electrum pyramidions <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Gold-silver alloy capstones, one per pyramid</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Thermoelectric pump / top-loaded monopole antenna / mode-locker</span></div>
+      <div class="lb-cell"><span class="lb-failure">Three simultaneous failures: oscillation rings down; radiation efficiency collapses; three pyramids drift to different resonant modes and array loses coherence.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Photograph or reconstruction of an electrum pyramidion capstone showing the gold-silver alloy metallic apex that acts as thermoelectric pump and top-loaded antenna">
+          <div class="lb-img-caption">placeholder — electrum pyramidion capstone reconstruction</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Seebeck effect diagram showing a metallic apex above a dielectric body above a conductive ground plane driving thermoelectric current as a pump">
+          <div class="lb-img-caption">placeholder — Seebeck thermoelectric pump / top-loaded monopole diagram</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="load-bearing-item" onclick="this.classList.toggle('open')">
+    <div class="lb-row">
+      <div class="lb-cell"><span class="lb-component">Nile river / Khufu branch <span class="lb-toggle-icon">▼</span></span><span class="lb-sub">Adjacent conductive water body; confirmed PNAS 2022</span></div>
+      <div class="lb-cell"><span class="lb-analogue">Power supply bus / ground plane return / ELF propagation medium</span></div>
+      <div class="lb-cell"><span class="lb-failure">Mechanical pump signal disappears. Antenna ground plane return broken. ELF ground wave has no medium. System goes dark. Almost certainly the current state.</span></div>
+    </div>
+    <div class="lb-expand">
+      <div class="lb-img-grid">
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Radar satellite imagery from PNAS 2022 showing the buried Khufu branch of the Nile running directly alongside the Giza valley temples — the confirmed ground plane position">
+          <div class="lb-img-caption">placeholder — Ghoneim et al. PNAS 2022 Khufu branch radar imagery</div>
+        </div>
+        <div class="lb-img-item">
+          <img src="placeholder.jpg" alt="Map showing the ancient Khufu Nile branch position directly beside the Giza plateau versus the current Nile position 8 kilometres to the east — the missing ground plane">
+          <div class="lb-img-caption">placeholder — ancient vs current Nile position, 8km migration map</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -849,5 +1939,53 @@
   <p>This document is not indexed by search engines · noindex nofollow · 2026</p>
 </footer>
 
+<div id="sf-modal-overlay" onclick="sfModalClose(event)">
+  <div id="sf-modal-box">
+    <button id="sf-modal-close" onclick="sfModalClose(null)" aria-label="Close">✕</button>
+    <div id="sf-modal-label"></div>
+    <div id="sf-modal-title"></div>
+    <img id="sf-modal-img" src="" alt="">
+    <div id="sf-modal-desc"></div>
+  </div>
+</div>
+
 </body>
+<script>
+
+  document.querySelectorAll('.data-item').forEach(function(item) {
+    item.addEventListener('mousedown', function(e) {
+      if (e.detail > 1) e.preventDefault();
+    });
+  });
+
+  function sfModal(title, label, imgSrc, desc) {
+    document.getElementById('sf-modal-title').textContent = title;
+    document.getElementById('sf-modal-label').textContent = label;
+    document.getElementById('sf-modal-img').src = imgSrc;
+    document.getElementById('sf-modal-img').alt = title;
+    document.getElementById('sf-modal-desc').textContent = desc;
+    document.getElementById('sf-modal-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function sfModalClose(event) {
+    if (event && event.target !== document.getElementById('sf-modal-overlay')) return;
+    document.getElementById('sf-modal-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('sf-modal-overlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.querySelectorAll('.data-item, .load-bearing-item, .analogy-accordion-row').forEach(function(item) {
+    item.addEventListener('mousedown', function(e) {
+      if (e.detail > 1) e.preventDefault();
+    });
+  });
+
+</script>
 </html>
