@@ -51,8 +51,6 @@
   .callout.warning .callout-label{color:var(--copper);}
   .callout.green{border-color:rgba(45,106,45,0.4);background:rgba(45,106,45,0.07);}
   .callout.green .callout-label{color:var(--green-ok-light);}
-
-  /* contributor cards */
   .contrib-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0;}
   @media(max-width:620px){.contrib-grid{grid-template-columns:1fr;}}
   .contrib-card{border:1px solid rgba(200,132,26,0.25);background:var(--granite);padding:1.4rem 1.6rem;}
@@ -62,8 +60,6 @@
   .contrib-card li{font-size:0.88rem;color:var(--deep-sand);padding:0.3rem 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5;}
   .contrib-card li:last-child{border-bottom:none;}
   .contrib-card li::before{content:'·';color:var(--amber);margin-right:0.6rem;}
-
-  /* data inventory */
   .data-domain{margin:2rem 0;}
   .data-domain-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;padding:0.5rem 0;border-bottom:1px solid rgba(200,132,26,0.3);margin-bottom:0;}
   .data-item{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem;}
@@ -73,8 +69,6 @@
   .data-cell:last-child{color:var(--stone);font-size:0.82rem;}
   .data-cell .src{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--copper);display:block;margin-top:0.2rem;}
   @media(max-width:620px){.data-item{grid-template-columns:1fr;}}
-
-  /* evidence checklist */
   .ev-section-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;padding:0.6rem 0 0.4rem;border-bottom:1px solid rgba(200,132,26,0.25);margin:1.5rem 0 0;}
   .ev-row{display:grid;grid-template-columns:32px 1fr 140px;gap:6px;align-items:start;padding:7px 4px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.86rem;}
   .ev-icon{text-align:center;font-size:14px;padding-top:2px;}
@@ -87,15 +81,11 @@
   .neutral{color:var(--stone);font-weight:500;}
   .conflict{color:#c06060;font-weight:600;}
   .ev-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:0.78rem;color:var(--stone);padding:0.8rem 0 1.2rem;}
-
-  /* freq table */
   .freq-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(200,132,26,0.15);margin:1.5rem 0;font-size:0.88rem;}
   .freq-cell{background:var(--granite);padding:0.9rem 1.1rem;}
   .freq-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;margin-bottom:0.3rem;}
   .freq-value{color:var(--ivory);font-size:1.1rem;font-weight:600;}
   .freq-note{color:var(--stone);font-size:0.8rem;margin-top:0.2rem;}
-
-  /* analogy table */
   .analogy-table{width:100%;border-collapse:collapse;font-size:0.88rem;margin:2rem 0;}
   .analogy-table th{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;text-align:left;padding:0.6rem 1rem;border-bottom:2px solid rgba(200,132,26,0.3);background:rgba(200,132,26,0.06);}
   .analogy-table td{padding:0.9rem 1rem;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:top;line-height:1.5;}
@@ -103,8 +93,6 @@
   .score-strong{color:var(--green-ok-light);font-weight:600;}
   .score-partial{color:var(--amber-light);}
   .score-weak{color:#c06060;}
-
-  /* signal flow */
   .signal-flow{display:flex;align-items:stretch;gap:0;margin:2rem 0;overflow-x:auto;padding-bottom:0.5rem;}
   .sf-node{flex:1;min-width:90px;background:var(--granite);border:1px solid rgba(200,132,26,0.3);padding:1rem 0.7rem;text-align:center;position:relative;}
   .sf-node:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--amber);font-size:1.1rem;z-index:2;background:var(--dark-stone);padding:0 2px;}
@@ -113,8 +101,6 @@
   .sf-name{font-size:0.82rem;color:var(--ivory);font-weight:600;line-height:1.3;}
   .sf-note{font-size:0.72rem;color:var(--stone);margin-top:0.3rem;line-height:1.3;}
   .sf-node.highlight{border-color:var(--amber);background:rgba(200,132,26,0.1);}
-
-  /* load-bearing */
   .lb-header{display:grid;grid-template-columns:3fr 2fr 2fr;gap:0;background:rgba(200,132,26,0.1);}
   .lb-header .lb-cell{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;padding:0.6rem 1rem;border-bottom:2px solid rgba(200,132,26,0.3);}
   .load-bearing-item{display:grid;grid-template-columns:3fr 2fr 2fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem;}
@@ -124,8 +110,6 @@
   .lb-component{color:var(--ivory);font-weight:600;}
   .lb-analogue{color:var(--nile-light);font-family:'JetBrains Mono',monospace;font-size:0.82rem;}
   .lb-failure{color:#c06060;font-size:0.85rem;}
-
-  /* experiments */
   .exp-tier{border:1px solid rgba(200,132,26,0.3);margin:2rem 0;overflow:hidden;}
   .exp-tier-header{background:rgba(200,132,26,0.1);padding:1rem 1.5rem;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;}
   .exp-tier-number{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;}
@@ -134,8 +118,6 @@
   .exp-tier-body{padding:1.5rem;}
   .exp-tier-body p{margin-bottom:0.8rem;font-size:0.92rem;}
   .exp-tier-body p:last-child{margin-bottom:0;}
-
-  /* conclusions */
   .conclusion-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
   @media(max-width:600px){.conclusion-grid{grid-template-columns:1fr;}}
   .conclusion-card{border:1px solid rgba(200,132,26,0.3);padding:1.5rem;background:rgba(200,132,26,0.05);}
@@ -145,15 +127,11 @@
   .conclusion-card.solid h4{color:#6abf6a;}
   .conclusion-card.open{border-color:rgba(181,101,29,0.4);background:rgba(181,101,29,0.06);}
   .conclusion-card.open h4{color:var(--copper);}
-
-  /* pyramid diagram */
   .pyramid-diagram{background:var(--granite);border:1px solid rgba(200,132,26,0.25);padding:2rem;margin:2rem 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;line-height:1.6;color:var(--sand);overflow-x:auto;}
   .pyramid-diagram .gold{color:var(--electrum);font-weight:bold;}
   .pyramid-diagram .blue{color:var(--nile-light);}
   .pyramid-diagram .amber{color:var(--amber-light);}
   .pyramid-diagram .stone-col{color:var(--stone);}
-
-  /* vercel */
   .deploy-step{background:var(--granite);border:1px solid rgba(200,132,26,0.2);padding:1.2rem 1.5rem;margin:1rem 0;display:grid;grid-template-columns:2rem 1fr;gap:1rem;align-items:start;}
   .deploy-step-num{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--amber);font-weight:700;padding-top:0.1rem;}
   .deploy-step-body{font-size:0.9rem;}
@@ -206,7 +184,7 @@
   </ol>
 </nav>
 
-<!-- §00 EPISTEMIC POSITION -->
+<!-- §00 -->
 <section id="s00">
   <div class="section-marker"><div class="section-number">§ 00 · Epistemic position</div><div class="section-line"></div></div>
   <h2>What this paper claims — and what it doesn't</h2>
@@ -219,7 +197,7 @@
   </div>
 </section>
 
-<!-- §01 THE PROBLEM -->
+<!-- §01 -->
 <section id="s01">
   <div class="section-marker"><div class="section-number">§ 01 · The problem with the tomb hypothesis</div><div class="section-line"></div></div>
   <h2>Why the standard explanation falls short</h2>
@@ -242,7 +220,7 @@
     <div class="data-item"><div class="data-cell">Casing stone joints: 0.5mm average over metre-scale surfaces<span class="src">Petrie 1883</span></div><div class="data-cell">Sub-millimetre jointing on tonne-scale blocks. Comparable to precision optical surface work.</div></div>
     <div class="data-item"><div class="data-cell">King's Chamber: ~10.47 × 5.23 × 5.84m, Aswan granite throughout<span class="src">Petrie 1883</span></div><div class="data-cell">Specific dimensions; basis for eigenfrequency prediction. Granite chosen over limestone — 800km transport cost.</div></div>
     <div class="data-item"><div class="data-cell">Sarcophagus too wide to pass through ascending passage<span class="src">Petrie 1883</span></div><div class="data-cell">Placed before upper passages sealed. Permanent sealed-cavity design intent.</div></div>
-    <div class="data-item"><div class="data-cell">Grand Gallery: 46.6m long, 8.6m tall, 26.3° incline<span class="src">Petrie 1883</span></div><div class="data-cell">Specific elevation angle is the claimed directed output angle. Voron's navigation system converges on this direction.</div></div>
+    <div class="data-item"><div class="data-cell">Grand Gallery: 46.6m long, 8.6m tall, 26.3° incline<span class="src">Petrie 1883</span></div><div class="data-cell">Specific elevation angle is the claimed directed output angle. Navigation system converges on this direction.</div></div>
     <div class="data-item"><div class="data-cell">Four shaft angles: N ~32.5° and ~39°; S ~39.6° and ~45°<span class="src">Petrie 1883, Bauval 1994</span></div><div class="data-cell">Precisely cut at specific elevations — not structural. Astronomically confirmed to point at bright stars at a specific epoch.</div></div>
     <div class="data-item"><div class="data-cell">Large void confirmed above Grand Gallery: ≥30m long, gallery-like cross-section<span class="src">Morishima et al., Nature 2017</span></div><div class="data-cell">First major internal discovery since 19th century. Peer-reviewed, muon tomography.</div></div>
     <div class="data-item"><div class="data-cell">Granite drill cores: feedrate ~500× faster per revolution than modern diamond drills<span class="src">Dunn 1998, cross-checked Petrie 1883</span></div><div class="data-cell">Spiral groove cut deeper through harder quartz than softer feldspar — opposite to conventional drilling. Consistent with ultrasonic machining.</div></div>
@@ -292,12 +270,13 @@
   </div>
 
   <div class="data-domain">
-    <div class="data-domain-title">Geological and hydrological data</div>
+    <div class="data-domain-title">Geological, hydrological, and dating data</div>
     <div class="data-item"><div class="data-cell">Sphinx enclosure walls: vertical precipitation erosion profile, not wind/sand scour<span class="src">Robert Schoch, Boston University, peer-reviewed 1992</span></div><div class="data-cell">Vertical undulating fissures from rainfall vs horizontal scour from wind. Inconsistent with arid post-5000 BCE climate.</div></div>
     <div class="data-item"><div class="data-cell">Seismic subsurface weathering: east/north/south sides 1.2–2.5m; west side 1.2m<span class="src">Schoch 1992</span></div><div class="data-cell">Front/sides 50–100% older than back. Minimum age ~7,000 BCE; preferred estimate ~10,000–12,000 BCE.</div></div>
     <div class="data-item"><div class="data-cell">Khufu branch of Nile confirmed running at base of valley temples during Old Kingdom<span class="src">PNAS 2022 (radar satellite, geophysics, deep soil coring); Nature 2024</span></div><div class="data-cell">Causeways terminated at branch. Valley temples functioned as river harbours. High-water level during Khufu, Khafre, Menkaure reigns.</div></div>
     <div class="data-item"><div class="data-cell">Nile now ~8km east; Khufu branch dried since end of dynastic period<span class="src">PNAS 2022</span></div><div class="data-cell">Ground plane disconnected from system. Explains apparent non-operation today.</div></div>
     <div class="data-item"><div class="data-cell">~20 North African Humid Periods over past 800,000 years, precession-paced ~23,000yr cycle<span class="src">Nature Communications 2023</span></div><div class="data-cell">Precipitation erosion on Sphinx consistent with any humid period — not just most recent. Age range is genuinely open upward.</div></div>
+    <div class="data-item"><div class="data-cell">Surface luminescence dating (SLD/TL/OSL) applied to Giza plateau structures: Valley Temple, Sphinx Temple, Menkaure pyramid<span class="src">Liritzis and Vafiadou, Journal of Cultural Heritage 2015</span></div><div class="data-cell">Results broadly confirm Old Kingdom dates (1st–3rd millennia BCE) for surface blocks sampled. One Valley Temple sample returned ages predating the conventional date beyond one standard error. Authors explicitly flag probable reuse of structures as a confounding factor. Critically: the blocks available for sampling are surface and casing blocks consistent with Old Kingdom finishing work — not the original core masonry or Sphinx enclosure floor. These are the surfaces Merer's papyrus describes being worked. The test required by this model — SLD of the Sphinx enclosure floor and interior granite chamber surfaces — has not been done.</div></div>
   </div>
 </section>
 
@@ -381,6 +360,18 @@
       </ul>
     </div>
     <div class="contrib-card">
+      <div class="contrib-who">Surface luminescence dating · 2015</div>
+      <div class="contrib-name">Liritzis and Vafiadou (Journal of Cultural Heritage)</div>
+      <ul>
+        <li>First application of surface luminescence dating (TL/OSL) to Giza plateau structures</li>
+        <li>Structures dated: Valley Temple, Sphinx Temple, Menkaure pyramid, Osirion shaft</li>
+        <li>Results broadly confirm Old Kingdom dates (1st–3rd millennia BCE) for blocks sampled</li>
+        <li>One Valley Temple sample predated the conventional date beyond one standard error</li>
+        <li>Authors flag probable reuse as a confounding factor — blocks sampled are surface and casing blocks, not original core or enclosure floor</li>
+        <li>The specific tests this model requires (interior granite chamber surfaces; Sphinx enclosure floor) have not been done</li>
+      </ul>
+    </div>
+    <div class="contrib-card">
       <div class="contrib-who">Nile hydrology · 2022–2024</div>
       <div class="contrib-name">Eman Ghoneim et al. (PNAS 2022, Nature 2024)</div>
       <ul>
@@ -451,18 +442,22 @@
   <p>A laser has three essential components. A pump — an external energy source that continuously feeds power into the system. A gain medium — a material that amplifies the oscillating signal on each pass rather than simply passing it through. And a pair of mirrors — one fully reflective, one partially reflective — that bounce the signal back and forth inside the cavity, letting a controlled fraction escape as the output beam.</p>
   <p>The critical difference between a laser and a passive filter is this: a filter only works with energy that is already present in its input. A laser constructs something that wasn't there before. Feed it broadband noise and it produces a single coherent frequency — stable, directional, polarised — because the cavity selects one mode and the gain medium amplifies only that mode on every round trip until it dominates completely.</p>
   <p>When this analogy was first applied to the pyramid, it had a fatal gap. No pump was identifiable. No gain medium was identifiable. Without both, the laser analogy didn't hold. What changed was a more complete reading of the full architecture — specifically three components that were either overlooked or not yet analysed.</p>
+
   <h3>The pump — the electrum pyramidion</h3>
   <p>Electrum is a gold-silver alloy. It is an excellent thermal and electrical conductor. When sunlight strikes the apex of the pyramid — a metallic tip elevated above a large stone body above a conductive water table — a temperature gradient develops between the hot metallic cap and the cooler mass below it. A temperature gradient across a conductor drives an electric current. This is the Seebeck effect, the same physical mechanism used in every industrial thermocouple, every space probe thermoelectric generator, and every waste-heat recovery system in use today. It requires no moving parts and no human operator. The sun rises, the metal heats, current flows. The sun sets, the metal cools, current stops.</p>
   <p>This current, injected daily into the resonant system from the apex, is the pump. It prevents the oscillation from ringing down. It self-starts every dawn without intervention, reaches peak power around solar noon when the temperature gradient is greatest, and decays naturally after dusk. The Nile provides the geological tidal energy that drives the mechanical oscillation from below. The sun provides the electrical pump energy from above. The machine runs on planetary-scale power sources that require no fuel and no maintenance.</p>
   <p>The three pyramidions are not the same size — they scale with their respective pyramids, Khufu's largest and Menkaure's smallest. In antenna array design, giving each element a different radiation amplitude is called amplitude tapering. A tapered array produces a cleaner, more focused output beam with less spurious energy radiated in unintended directions. The sizing of the three caps is the correct progression for a tapered phased array optimised to minimise unwanted emissions while preserving the main beam.</p>
+
   <h3>The seed oscillator — the sarcophagus</h3>
   <p>A laser does not spontaneously begin lasing the moment the pump is switched on. It needs a seed — a single photon that survives one complete round trip through the cavity, triggering stimulated emission of a second identical photon, which triggers a fourth, which triggers an eighth. The cascade builds exponentially from that first surviving photon. Without the seed, the pump simply heats the gain medium without producing coherent output.</p>
   <p>The granite sarcophagus in the King's Chamber is the seed. John Reid's acoustic measurements confirmed it resonates at approximately 117 Hz — slightly offset from the chamber's own resonance at approximately 121 Hz. A deliberate strike on the sarcophagus — a single mechanical impulse at or near the chamber's resonant frequency — initiates the oscillation. The pump then sustains it. Once running, the system does not need to be struck again unless it rings down completely.</p>
   <p>The sarcophagus being too wide to pass through the ascending passage is significant here. It was placed in the room before the upper passages were sealed, which means it was always intended to remain there permanently. This is not the behaviour of a funerary object that might be removed with the body. It is the behaviour of a component that was installed before the chamber was closed and designed to stay.</p>
+
   <h3>The gain medium — pressurised ice in sealed granite cavities</h3>
   <p>This is the most speculative component of the three and should be read as a hypothesis rather than a confirmed feature. Voron's structural analysis of the pyramid — supported by the material choices throughout — proposes that the sealed granite chambers were filled with ice under pressure.</p>
   <p>The reasoning proceeds from the materials themselves. Granite has very low water absorption and extremely high resistance to low temperatures — it does not crack or degrade in freezing conditions the way limestone does. Limestone, which forms the pyramid's outer body, has high thermal insulation properties — it slows heat exchange between the interior and the outside environment. These material properties are exactly what you would specify if you needed to maintain a pressurised frozen medium inside a stone cavity for an extended period. The granite holds the ice without absorbing it or fracturing around it. The limestone insulates the granite from the thermal fluctuations of the Egyptian climate.</p>
   <p>A pressurised nonlinear medium — ice under the mechanical stress of the pyramid's mass above it, subjected to cyclic tidal loading from the Nile water table below — is a candidate for parametric amplification. Parametric amplification occurs when a nonlinear medium under cyclic stress transfers energy between different frequency components in a way that amplifies one of them. This is the gain mechanism used in parametric oscillators, which appear in communications and signal processing wherever extremely low-noise amplification is required. Whether the gain coefficient of ice under these conditions is sufficient to cross the oscillation threshold at pyramid scale is precisely the question the physical experiments are designed to answer. It cannot be determined from first principles alone.</p>
+
   <h3>What the system looks like running</h3>
   <p>At dawn, sunlight strikes the electrum cap. Current begins to flow down through the pyramid body into the water table and returns via the Nile. The system is pumped but not yet oscillating — energy is being injected but no coherent signal exists yet. Someone strikes the sarcophagus. The granite box rings at its natural frequency — approximately 117 to 121 Hz — and that mechanical impulse couples into the pressurised medium filling the cavity. The oscillation begins to build. On each round trip through the cavity, the gain medium amplifies it slightly. The Tura limestone casing at the boundary reflects most of the energy back inward, allowing amplitude to accumulate over many cycles rather than escaping immediately. The nested architecture — high-Q granite inner cavity, low-Q limestone outer body, distinct dielectric boundary between them — concentrates the oscillating energy progressively inward. The pump energy from the pyramidion prevents the oscillation from decaying between cycles. After some number of round trips, the system reaches a stable operating state: a coherent, single-frequency oscillation at the resonant frequency of the granite cavity, sustained by the pump, seeded by the initial impulse, amplified by the gain medium on each pass, and partially leaking through the dielectric boundary as the output.</p>
   <p>That output exits through two channels simultaneously. The first is an ELF ground wave — an extremely low frequency signal — that couples into the Nile water table and propagates through the Earth. The second exits through the Grand Gallery at 26.3° elevation: directed, coherent, and polarised. The character of that second output is the central open question of the model.</p>
@@ -551,13 +546,13 @@
 <!-- §07 CONVERGENCE -->
 <section id="s07">
   <div class="section-marker"><div class="section-number">§ 07 · Convergence — independent frameworks, same architecture</div><div class="section-line"></div></div>
-    <h2>When three independent methods arrive at the same place</h2>
-    <p>The model described in this paper was not built from a single analytical tradition. It emerged from three completely separate research programmes, developed in different decades, by researchers with no knowledge of each other's work. The fact that they converge on the same physical behaviour in the same structure is not a premise of the model. It is its strongest evidence.</p>
-    <p>The first framework is microwave engineering analysis. It asks a functional question: given the materials used and the geometry built, what does each architectural element actually do? Applied to the Giza complex, it identifies the Tura limestone casing as a dielectric boundary — the analogue of a laser's partial reflector mirror. It identifies the granite chambers as high-Q resonant cavities. It identifies the valley temple column arrays as phononic crystal bandpass filters. It identifies the causeways as rectangular waveguides. It identifies the three pyramids as elements of a phased array, and the sarcophagus positions as the inter-element spatial offsets that steer the array's combined output in a specific direction. It predicts coherent, directional, polarised output through the Grand Gallery.</p>
-    <p>The second framework is independent geometric decoding. It asks a different question entirely: what mathematical relationships are encoded in the spatial dimensions and positions of the structures? Working from surveyed coordinates and published dimensions, it finds that the sarcophagi of the three pyramids are not aligned — the total positional offset across the array is approximately 25.5 metres. The engineering framework independently identifies this same offset as the beam-steering geometry of the phased array: a spatial phase shift that directs the combined output toward a specific azimuth. Neither framework was looking for what the other found. The offset is either a construction error — impossible given the precision of everything else at Giza — or it is the same physical fact described in two different analytical languages.</p>
-    <p>The geometric framework also finds that the Grand Gallery is oriented toward a specific region of the sky, constrained by the four shaft navigation fix to the Lepus sector, and that a planet in the habitable zone of Zeta Leporis would orbit at 3.87 to 3.9 astronomical units from its star — matching the Sphinx-to-Khufu distance in the spatial layout at a scale of 147.59 metres per astronomical unit. The engineering framework independently identifies the Grand Gallery as the output waveguide through which the coherent field exits the system. The geometric framework finds a target encoded at the end of that waveguide. Again, neither was built to confirm the other.</p>
-    <p>The third framework is peer-reviewed electromagnetic scattering physics. Balezin, Baryshnikova, Kapitanova and Evlyukhin published in the Journal of Applied Physics in 2018 — with no knowledge of either the engineering model or the geometric decoding work. They treated the pyramid as a physical electromagnetic scatterer and applied the same multipole decomposition techniques used in nanophotonics research. They found three things. First, the pyramid resonates at specific radio wavelengths. Second, at those wavelengths, electromagnetic energy concentrates specifically in the King's Chamber — the inner granite cavity that the engineering model independently identifies as the high-Q resonator. Third, when the pyramid sits on its limestone plateau, most of its scattered electromagnetic energy is directed downward into the ground — into the water table that the engineering model independently identifies as the ground plane return and ELF propagation medium.</p>
-    <p>These researchers were solving a physics problem, not testing an archaeological hypothesis. They found what they found because the geometry and material properties of the structure produced those results. Their paper is the closest thing in this body of work to an independent experimental confirmation — computational rather than physical, peer-reviewed, verified by three separate numerical methods, and entirely free of the interpretive frameworks that characterise the other research traditions in this space.</p>
+  <h2>When three independent methods arrive at the same place</h2>
+  <p>The model described in this paper was not built from a single analytical tradition. It emerged from three completely separate research programmes, developed in different decades, by researchers with no knowledge of each other's work. The fact that they converge on the same physical behaviour in the same structure is not a premise of the model. It is its strongest evidence.</p>
+  <p>The first framework is microwave engineering analysis. It asks a functional question: given the materials used and the geometry built, what does each architectural element actually do? Applied to the Giza complex, it identifies the Tura limestone casing as a dielectric boundary — the analogue of a laser's partial reflector mirror. It identifies the granite chambers as high-Q resonant cavities. It identifies the valley temple column arrays as phononic crystal bandpass filters. It identifies the causeways as rectangular waveguides. It identifies the three pyramids as elements of a phased array, and the sarcophagus positions as the inter-element spatial offsets that steer the array's combined output in a specific direction. It predicts coherent, directional, polarised output through the Grand Gallery.</p>
+  <p>The second framework is independent geometric decoding. It asks a different question entirely: what mathematical relationships are encoded in the spatial dimensions and positions of the structures? Working from surveyed coordinates and published dimensions, it finds that the sarcophagi of the three pyramids are not aligned — the total positional offset across the array is approximately 25.5 metres. The engineering framework independently identifies this same offset as the beam-steering geometry of the phased array: a spatial phase shift that directs the combined output toward a specific azimuth. Neither framework was looking for what the other found. The offset is either a construction error — impossible given the precision of everything else at Giza — or it is the same physical fact described in two different analytical languages.</p>
+  <p>The geometric framework also finds that the Grand Gallery is oriented toward a specific region of the sky, constrained by the four shaft navigation fix to the Lepus sector, and that a planet in the habitable zone of Zeta Leporis would orbit at 3.87 to 3.9 astronomical units from its star — matching the Sphinx-to-Khufu distance in the spatial layout at a scale of 147.59 metres per astronomical unit. The engineering framework independently identifies the Grand Gallery as the output waveguide through which the coherent field exits the system. The geometric framework finds a target encoded at the end of that waveguide. Again, neither was built to confirm the other.</p>
+  <p>The third framework is peer-reviewed electromagnetic scattering physics. Balezin, Baryshnikova, Kapitanova and Evlyukhin published in the Journal of Applied Physics in 2018 — with no knowledge of either the engineering model or the geometric decoding work. They treated the pyramid as a physical electromagnetic scatterer and applied the same multipole decomposition techniques used in nanophotonics research. They found three things. First, the pyramid resonates at specific radio wavelengths. Second, at those wavelengths, electromagnetic energy concentrates specifically in the King's Chamber — the inner granite cavity that the engineering model independently identifies as the high-Q resonator. Third, when the pyramid sits on its limestone plateau, most of its scattered electromagnetic energy is directed downward into the ground — into the water table that the engineering model independently identifies as the ground plane return and ELF propagation medium.</p>
+  <p>These researchers were solving a physics problem, not testing an archaeological hypothesis. They found what they found because the geometry and material properties of the structure produced those results. Their paper is the closest thing in this body of work to an independent experimental confirmation — computational rather than physical, peer-reviewed, verified by three separate numerical methods, and entirely free of the interpretive frameworks that characterise the other research traditions in this space.</p>
   <div class="pull-quote"><p>"Three programmes. Three decades. Three completely different starting questions. One physical structure. The convergence is not planned — it is the structure itself, read three different ways, giving the same answer."</p></div>
 </section>
 
@@ -636,7 +631,7 @@
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Casing stone joints avg 0.5mm over metre-scale surfaces<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Tura casing was a precision engineering element — consistent with dielectric boundary function</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sarcophagus too wide to pass through ascending passage<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Placed before upper passages sealed. Permanent sealed-cavity intent consistent with pressurised oscillator model</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Grand Gallery: 46.6m long, 26.3° incline<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Specific elevation angle is the claimed directed output angle. Navigation fix converges on this direction</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Large void confirmed above Grand Gallery: ≥30m, gallery cross-section<span class="ev-src">Morishima et al., Nature 2017</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Location and geometry consistent with predicted second waveguide producing second polarisation component (Voron)</span></div></div>
+  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Large void confirmed above Grand Gallery: ≥30m, gallery cross-section<span class="ev-src">Morishima et al., Nature 2017</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Location and geometry consistent with predicted second waveguide producing second polarisation component</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Granite drill cores: feedrate ~500× modern diamond drills; groove deeper in harder quartz<span class="ev-src">Dunn 1998 / Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Ultrasonic machining signature. Builders appear to have understood quartz acoustic properties</span></div></div>
   <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Four shaft angles pointing to Thuban, Kochab, Alnitak, Sirius at ~2,500 BCE<span class="ev-src">Badawy/Trimble 1964, Bauval 1994</span></div><div class="ev-verdict partial">Epoch-dependent<span class="ev-note">Geometrically confirmed for 2,500 BCE. At 10,000+ BCE shafts pointed to different stars. This is the central tension between Schoch dating and navigation system</span></div></div>
 
@@ -645,23 +640,24 @@
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Electric field ~3× enhanced in King's Chamber at resonance<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Independently confirms energy concentration in the inner granite cavity — the core prediction of the nested Q model</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Substrate case: EM energy focused downward into plateau, maxima at subterranean chamber<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Pyramid naturally drives energy into ground — directly consistent with ELF ground coupling and Nile water table connection</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Total extinction cross-section identical from above or below<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Bidirectional coupling — system can both collect from and radiate into the ground plane</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Model used uniform limestone ε=5 — no granite or Tura casing distinction<span class="ev-src">Balezin et al. 2018 (stated limitation)</span></div><div class="ev-verdict partial">Underestimates<span class="ev-note">Actual nested dielectric architecture would produce stronger chamber concentration. Results are a lower bound. Model predictions should be stronger in reality</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Model used uniform limestone ε=5 — no granite or Tura casing distinction<span class="ev-src">Balezin et al. 2018 (stated limitation)</span></div><div class="ev-verdict partial">Underestimates<span class="ev-note">Actual nested dielectric architecture would produce stronger chamber concentration. Results are a lower bound</span></div></div>
   <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Three-pyramid complex not modelled<span class="ev-src">Balezin et al. 2018 (future work)</span></div><div class="ev-verdict neutral">Not yet tested<span class="ev-note">Explicitly flagged by the authors. Corresponds to Elmer FEM Tier 3 — phased array beam pattern prediction</span></div></div>
 
   <div class="ev-section-title">Acoustic measurements</div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">LF resonances 0.5–20 Hz present in King's Chamber in silence<span class="ev-src">Tom Danley, 1997</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Resonance present without active excitation — consistent with geological tidal loading driving the system passively</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">King's Chamber ~121 Hz; sarcophagus ~117 Hz; 4 Hz beat frequency<span class="ev-src">John Reid, 1997</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Two offset resonances in the granite cavity — coupled oscillator model. Sarcophagus as tuned resonator within chamber consistent with Voron's oscillator hypothesis</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Six independent teams over 40 years: ancient stone chambers resonate 95–120 Hz<span class="ev-src">ALBA Project 2026; three results peer-reviewed</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Cross-site convergence on same frequency band strongly suggests deliberate design criterion. Not coincidence at six sites with different shapes</span></div></div>
+  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">King's Chamber ~121 Hz; sarcophagus ~117 Hz; 4 Hz beat frequency<span class="ev-src">John Reid, 1997</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Two offset resonances in the granite cavity — coupled oscillator model. Sarcophagus as tuned resonator within chamber</span></div></div>
+  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Six independent teams over 40 years: ancient stone chambers resonate 95–120 Hz<span class="ev-src">ALBA Project 2026; three results peer-reviewed</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Cross-site convergence on same frequency band strongly suggests deliberate design criterion</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Dead-end Passage infrasound at 5.13 Hz confirmed in silence<span class="ev-src">Collins / Hale, 2019</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">5.13 Hz is within ELF range. Passage geometry acts as tuned Helmholtz resonator</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Danley attributed resonances to wind across shaft openings<span class="ev-src">Danley, FATE magazine 1998</span></div><div class="ev-verdict partial">Mechanism contested<span class="ev-note">Wind-driven would be sporadic and weather-dependent. Geological tidal loading would be continuous. Same frequencies, different temporal signatures. Testable by sealing shafts and re-measuring</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Danley attributed resonances to wind across shaft openings<span class="ev-src">Danley, FATE magazine 1998</span></div><div class="ev-verdict partial">Mechanism contested<span class="ev-note">Wind-driven would be sporadic and weather-dependent. Geological tidal loading would be continuous. Testable by sealing shafts and re-measuring</span></div></div>
 
-  <div class="ev-section-title">Geological and hydrological</div>
+  <div class="ev-section-title">Geological, hydrological, and dating</div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sphinx enclosure walls: vertical precipitation erosion profile<span class="ev-src">Robert Schoch, Boston University, peer-reviewed 1992</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Since Sphinx is load-bearing (horn antenna), its age is a minimum age for the entire system</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Seismic weathering: front/sides 50–100% older than back<span class="ev-src">Schoch 1992</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Front (collector / horn aperture) is the oldest element — consistent with it being the first component placed</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Khufu Nile branch confirmed running at base of valley temples during Old Kingdom<span class="ev-src">PNAS 2022, Nature 2024</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Directly validates the ground plane / power supply model. The Nile was exactly where the model requires it to be</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Nile now ~8km east — branch dried since dynastic period<span class="ev-src">PNAS 2022</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Explains apparent non-operation today. Ground plane disconnected — exactly the failure mode predicted by load-bearing analysis</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Schoch age range: minimum 7,000 BCE, preferred 10,000–12,000 BCE, possibly much older<span class="ev-src">Schoch 1992–2023</span></div><div class="ev-verdict partial">Constrains Nile position<span class="ev-note">At 10,000 BCE Khufu branch existed but at different level. If construction is older, different Nile branch position must be accounted for. Age question directly affects which operational conditions the system was designed for</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">No OSL dating of Sphinx enclosure floor has been performed<span class="ev-src">Gap in existing research</span></div><div class="ev-verdict neutral">Critical gap<span class="ev-note">Optically stimulated luminescence would give absolute date independent of erosion rate assumptions. The single most important missing test for the age model</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Schoch age range: minimum 7,000 BCE, preferred 10,000–12,000 BCE, possibly much older<span class="ev-src">Schoch 1992–2023</span></div><div class="ev-verdict partial">Constrains Nile position<span class="ev-note">At 10,000 BCE Khufu branch existed but at different level. Age question directly affects which operational conditions the system was designed for</span></div></div>
+  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Surface luminescence dating of Valley Temple, Sphinx Temple, Menkaure pyramid: broadly Old Kingdom dates; one Valley Temple anomaly predating conventional date<span class="ev-src">Liritzis and Vafiadou, J. Cultural Heritage 2015</span></div><div class="ev-verdict partial">Consistent, not constraining<span class="ev-note">Old Kingdom dates on surface and casing blocks are exactly what the model predicts — these are the finishing-phase blocks Merer's papyrus describes. The one anomalous Valley Temple result may indicate earlier construction. Critically, the blocks tested are not the original core masonry or Sphinx enclosure floor. Authors explicitly note probable reuse as a confounding factor. The specific tests this model requires have not yet been done.</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">SLD/OSL of Sphinx enclosure floor and interior granite chamber surfaces not performed<span class="ev-src">Gap in existing research</span></div><div class="ev-verdict neutral">Critical gap<span class="ev-note">Liritzis and Vafiadou tested available surface blocks — not the enclosure floor or interior chamber walls. These original exposed surfaces would give dates independent of the Old Kingdom finishing phase. This is the test the model requires.</span></div></div>
 
   <div class="ev-section-title">Geometric and mathematical encodings</div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">King's Chamber unique triangle: area = perimeter = shorter leg² in metres only<span class="ev-src">Voron 2019 — independently verifiable calculation</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Builders knew the metre. Two independent metre encodings in the same structure</span></div></div>
@@ -669,16 +665,17 @@
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Fibonacci series F21–F28 across all three pyramids in two unit systems<span class="ev-src">Voron 2025 — independently verifiable</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Three pyramids designed as one mathematical system — consistent with simultaneous specification argument</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sphinx→Khufu 3.89 AU matches Zeta Leporis habitable zone 3.87–3.9 AU<span class="ev-src">Voron 2022; standard stellar physics from Hipparcos luminosity data</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Habitable zone is a standard calculation from confirmed luminosity. Match to two decimal places in two independent measurements</span></div></div>
   <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sarcophagus spatial offsets: Khufu ~15.5m west, Menkaure ~10m east of alignment<span class="ev-src">Voron 2022 (from surveyed positions)</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">No structural or aesthetic explanation. Only make sense as inter-element phase offsets in a directed array</span></div></div>
-  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Gallery path 70m → 70 light years to Zeta Leporis<span class="ev-src">Voron 2022; Hipparcos/Gaia</span></div><div class="ev-verdict partial">Epoch-dependent<span class="ev-note">Distance encoding consistent. But shaft navigation fix calibrated to ~2,500 BCE — at 10,000+ BCE epoch the fix pointed to different stars. Whether gallery azimuth still intersects Zeta Leporis at older epoch requires ecliptic-coordinate calculation not yet done</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Four shaft navigation fix → Lepus sector at ~2,500 BCE<span class="ev-src">Badawy/Trimble/Bauval, confirmed astronomically</span></div><div class="ev-verdict neutral">Epoch-constrained<span class="ev-note">Geometrically confirmed for 2,500 BCE. The central tension: Schoch places construction at 10,000+ BCE but shaft alignments encode a 2,500 BCE epoch. One constrains the other. Ecliptic calculation could resolve this</span></div></div>
+  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Gallery path 70m → 70 light years to Zeta Leporis<span class="ev-src">Voron 2022; Hipparcos/Gaia</span></div><div class="ev-verdict partial">Epoch-dependent<span class="ev-note">Distance encoding consistent. Whether gallery azimuth intersects Zeta Leporis at the construction epoch requires ecliptic-coordinate calculation not yet done — see Computational Tier 1b</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Four shaft navigation fix → Lepus sector at ~2,500 BCE<span class="ev-src">Badawy/Trimble/Bauval, confirmed astronomically</span></div><div class="ev-verdict neutral">Epoch-constrained<span class="ev-note">Confirmed for 2,500 BCE. Central tension: Schoch places construction at 10,000+ BCE but shaft alignments encode a 2,500 BCE epoch. Ecliptic calculation (Tier 1b) could resolve this</span></div></div>
 
   <div class="ev-section-title">Dating evidence</div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Merer papyrus: Old Kingdom Egyptians finishing and casing the pyramid ~2,600 BCE<span class="ev-src">Tallet 2013, Wadi al-Jarf</span></div><div class="ev-verdict neutral">Consistent, not constraining<span class="ev-note">Confirms Old Kingdom activity. Does not confirm original construction date. Describes casing delivery — finishing work, not core construction</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Merer papyrus: Old Kingdom Egyptians finishing and casing the pyramid ~2,600 BCE<span class="ev-src">Tallet 2013, Wadi al-Jarf</span></div><div class="ev-verdict neutral">Consistent, not constraining<span class="ev-note">Confirms Old Kingdom activity. Describes casing delivery — finishing work, not core construction</span></div></div>
   <div class="ev-row"><div class="ev-icon">❌</div><div class="ev-finding">Vyse cartouches attributing pyramid to Khufu (1837)<span class="ev-src">Howard Vyse, unverified</span></div><div class="ev-verdict conflict">Discardable<span class="ev-note">Paint never forensically dated. Orthographic anomalies documented. Vyse had motive, opportunity, source material. Cannot be used as evidence without forensic paint analysis</span></div></div>
   <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Radiocarbon mortar: 2,871–2,604 BCE range, 400-year scatter<span class="ev-src">Multiple studies 1984, 1995</span></div><div class="ev-verdict neutral">Consistent, not constraining<span class="ev-note">Dates mortar not stones. Old wood problem unresolved. Consistent with dating the last major finishing phase</span></div></div>
 
   <div class="ev-section-title">Core model predictions — current status</div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">King's Chamber eigenfrequency ~110 Hz from geometry and granite material properties alone<span class="ev-src">Model prediction — Elmer FEM Tier 1</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">One afternoon in Elmer FEM. The single most important unfulfilled prediction. Danley measured LF resonances and Reid measured ~121 Hz room mode — these are different phenomena. First-principles eigenfrequency is the testable prediction</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">King's Chamber eigenfrequency ~110 Hz from geometry and granite material properties alone<span class="ev-src">Model prediction — Elmer FEM Tier 1a</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">One afternoon in Elmer FEM. The single most important unfulfilled prediction. First-principles eigenfrequency from geometry is the testable claim</span></div></div>
+  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Grand Gallery ecliptic direction intersects Zeta Leporis at construction epoch<span class="ev-src">Model prediction — Computational Tier 1b</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">One afternoon in Stellarium or astropy. The single most important unresolved geometric question. Resolves the central Schoch/navigation-fix dating tension</span></div></div>
   <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Nested architecture produces Q-multiplication ≥3×<span class="ev-src">Model prediction — Elmer FEM Tier 2</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">Balezin et al. used uniform limestone — the actual layered architecture has not been computationally tested</span></div></div>
   <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Gallery wave character — what exits at 26.3° elevation under operating conditions<span class="ev-src">Model prediction — Physical Tier 3</span></div><div class="ev-verdict neutral">Fundamentally open<span class="ev-note">Cannot be determined theoretically. Requires physical experiment with comprehensive instrumentation at the gallery exit. The central unknown of the entire model</span></div></div>
 </section>
@@ -688,7 +685,7 @@
   <div class="section-marker"><div class="section-number">§ 10 · The age question and the Nile</div><div class="section-line"></div></div>
   <h2>Why age matters — and what the geology actually says</h2>
   <p>The age of the Giza complex is not merely a historical curiosity. For the engineering model it has a specific implication: the Nile's position. The system's ground plane, power source, and ELF propagation medium is the Nile. The system was designed to operate when a Nile branch was adjacent to the plateau. The Khufu branch has been confirmed to have run directly alongside the valley temples during the Old Kingdom period (PNAS 2022). Earlier Nile positions during prior African Humid Periods would have been higher and closer — potentially more optimal for ground coupling.</p>
-  <p>Schoch's minimum age of 7,000 BCE and preferred estimate of 10,000–12,000 BCE are anchored to the most recent African Humid Period. Published paleoclimate research identifies approximately 20 such periods over the past 800,000 years, each capable of producing the same precipitation erosion Schoch identifies. The seismic method gives a relative age — the Sphinx front is 50–100% older than the back — but the absolute calibration depends on an assumed erosion rate. The honest geological range is: hard minimum 7,000 BCE, most defensible estimate 10,000–12,000 BCE, and genuinely open upward. Optically stimulated luminescence dating of the Sphinx enclosure floor has not been performed and would resolve this.</p>
+  <p>Schoch's minimum age of 7,000 BCE and preferred estimate of 10,000–12,000 BCE are anchored to the most recent African Humid Period. Published paleoclimate research identifies approximately 20 such periods over the past 800,000 years, each capable of producing the same precipitation erosion Schoch identifies. The seismic method gives a relative age — the Sphinx front is 50–100% older than the back — but the absolute calibration depends on an assumed erosion rate. The honest geological range is: hard minimum 7,000 BCE, most defensible estimate 10,000–12,000 BCE, and genuinely open upward.</p>
   <p>If the Sphinx is load-bearing in the engineering model — and it is, as the horn antenna impedance transition — then the entire system cannot predate it. Schoch's geology places a minimum age on the whole complex, not just the Sphinx.</p>
   <h3>The construction prerequisite argument</h3>
   <p>Regardless of the specific date, one constraint is absolute: the entire complex had to be designed as a complete system before any construction began. The phased array beam direction requires all three sarcophagus positions to be fixed before pyramid one is started. The shaft star alignments require knowing the target before the pyramid body reaches shaft height. The plateau levelling to ±2.1cm across 230 metres requires the complete footprint of all three pyramids. Every constraint depends on every other. This is the architecture of a manufacturing specification, not a sequence of independent pharaonic projects. The knowledge required — the metric system, the speed of light, phased array design, resonant cavity engineering, a stellar navigation fix to a star 70 light years away — was not demonstrably possessed by any known civilisation at any point in recorded history.</p>
@@ -699,16 +696,17 @@
   <div class="section-marker"><div class="section-number">§ 11 · The dating evidence examined</div><div class="section-line"></div></div>
   <h2>What actually supports 4,500 years — an honest assessment</h2>
   <p>The conventional 4,500-year dating rests on a specific body of evidence. Examining each piece carefully produces a more nuanced picture than is commonly presented.</p>
-  <p>The Vyse cartouches are the anchor piece — the single most direct attribution of the pyramid to Khufu. They have never been forensically dated. The orthographic anomalies are documented. Vyse had the motive, opportunity, and source materials (Rosellini's Monumenti dell'Egitto, which contained the hieroglyphic spelling of Khufu's name). The paint is red ochre, which Petrie's own colleague noted was indistinguishable from contemporary Arab quarry marks. This evidence must be considered discardable until forensic paint analysis is permitted.</p>
-  <p>The Merer papyrus is genuinely strong evidence that Old Kingdom Egyptians were doing significant work on the pyramid around 2,600 BCE — but it describes casing delivery, not core construction. The workers' village, Khufu mud sealings, and radiocarbon mortar dates all confirm substantial Old Kingdom activity at Giza. None of them constrain original construction date. As one analogy makes clear: if a future archaeologist found 21st-century car keys inside the Great Pyramid and carbon dated them, they would not conclude the pyramid was built in the 21st century. The association of artefacts with a structure does not date the structure's original construction.</p>
-  <p>The correct scientific position is that the original construction date of the Great Pyramid is genuinely unknown. 4,500 years is an attribution with substantial contextual support for Old Kingdom activity. It is not a demonstrated construction date for the stone core.</p>
+  <p>The Vyse cartouches are the anchor piece — the single most direct attribution of the pyramid to Khufu. They have never been forensically dated. The orthographic anomalies are documented. Vyse had the motive, opportunity, and source materials. The paint is red ochre, which Petrie's own colleague noted was indistinguishable from contemporary Arab quarry marks. This evidence must be considered discardable until forensic paint analysis is permitted.</p>
+  <p>The Merer papyrus is genuinely strong evidence that Old Kingdom Egyptians were doing significant work on the pyramid around 2,600 BCE — but it describes casing delivery, not core construction. The workers' village, Khufu mud sealings, and radiocarbon mortar dates all confirm substantial Old Kingdom activity at Giza. None of them constrain original construction date.</p>
+  <p>Surface luminescence dating was applied to Giza plateau structures by Liritzis and Vafiadou (Journal of Cultural Heritage, 2015) — the first application of this technique to Egyptian monuments. Their results broadly confirm Old Kingdom dates for the surface blocks they were able to sample: the Valley Temple, Sphinx Temple, and Menkaure pyramid exterior. This is consistent with our model, not contradictory to it — those are precisely the surface and casing blocks that the Merer papyrus describes Old Kingdom workers placing. The authors note probable reuse as a confounding factor and one Valley Temple sample returned dates predating the conventional construction date beyond one standard error. The specific tests this model requires — SLD of the Sphinx enclosure floor and the interior granite chamber surfaces — have not been performed. Those original exposed surfaces, rather than the Old Kingdom casing blocks, are what would give an independent date for when the structures were first carved and placed.</p>
+  <p>The correct scientific position is that the original construction date of the Great Pyramid is genuinely unknown. 4,500 years is an attribution with substantial contextual support for Old Kingdom finishing activity. It is not a demonstrated construction date for the stone core.</p>
 </section>
 
 <!-- §12 COMPUTATIONAL EXPERIMENTS -->
 <section id="s12">
   <div class="section-marker"><div class="section-number">§ 12 · Computational experiments — Elmer FEM</div><div class="section-line"></div></div>
   <h2>Testing the hypothesis computationally before physically</h2>
-  <p>The model makes four specific, quantitative, falsifiable predictions that can be tested computationally at zero cost using Elmer FEM, the free open-source finite element solver. The success criterion for each is specified before the computation is run.</p>
+  <p>The model makes specific, quantitative, falsifiable predictions that can be tested computationally at zero cost. The success criterion for each is specified before the computation is run.</p>
 
   <div class="exp-tier">
     <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 1a</span><span class="exp-tier-title">King's Chamber eigenfrequency analysis</span><span class="exp-tier-cost">Cost: $0 · Time: one afternoon</span></div>
@@ -717,7 +715,7 @@
       <p>Prediction: the dominant mode will fall within 10% of the measured value of approximately 110–121 Hz using only geometry and material properties, with no parameter fitting. If it does, the model has its first independently verifiable computational data point. If it doesn't, the model needs revision at the most fundamental level. This single result — positive or negative — is the foundation everything else builds on.</p>
     </div>
   </div>
-  
+
   <div class="exp-tier">
     <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 1b</span><span class="exp-tier-title">Grand Gallery ecliptic coordinate calculation</span><span class="exp-tier-cost">Cost: $0 · Time: one afternoon</span></div>
     <div class="exp-tier-body">
@@ -741,7 +739,7 @@
     <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 3</span><span class="exp-tier-title">Phased array beam pattern</span><span class="exp-tier-cost">Cost: $0 · Time: two to three days</span></div>
     <div class="exp-tier-body">
       <p>Three-element array model using surveyed pyramid positions, with sarcophagus offsets as inter-element phase reference positions. Run acoustic far-field radiation pattern computation.</p>
-      <p>Prediction: the principal lobe falls within a few degrees of the Lepus sector azimuth. Sidelobe level is lower with amplitude taper (different-sized pyramidions) than without. Any measured discrepancy between computed beam direction and Lepus sector azimuth gives a constraint on which epoch the array was designed for — directly addressing the Schoch/Voron dating tension.</p>
+      <p>Prediction: the principal lobe falls within a few degrees of the Lepus sector azimuth. Sidelobe level is lower with amplitude taper (different-sized pyramidions) than without. Any measured discrepancy between computed beam direction and Lepus sector azimuth gives a constraint on which epoch the array was designed for — directly addressing the Schoch/navigation-fix dating tension alongside Tier 1b.</p>
     </div>
   </div>
 
@@ -749,7 +747,7 @@
     <div class="exp-tier-header"><span class="exp-tier-number">Computational tier 4</span><span class="exp-tier-title">Gallery polarisation and intersection node</span><span class="exp-tier-cost">Cost: $0 · Time: two to three days</span></div>
     <div class="exp-tier-body">
       <p>Model the two angled galleries as acoustic waveguides at their documented angles relative to the King's Chamber. Compute polarisation state of acoustic field in each and locate constructive interference node outside the pyramid body.</p>
-      <p>Prediction: the two galleries produce orthogonally polarised acoustic fields whose constructive interference node is located at the position identified by Voron as the system's output focus. The newly confirmed void above the Grand Gallery (Morishima et al. 2017) should be incorporated as a second waveguide element in this model.</p>
+      <p>Prediction: the two galleries produce orthogonally polarised acoustic fields whose constructive interference node is located at the position identified as the system's output focus. The confirmed void above the Grand Gallery (Morishima et al. 2017) should be incorporated as a second waveguide element in this model.</p>
     </div>
   </div>
 </section>
@@ -794,7 +792,7 @@
 <section id="s14">
   <div class="section-marker"><div class="section-number">§ 14 · What would restart the real system</div><div class="section-line"></div></div>
   <h2>Conditions required for full-scale operation</h2>
-  <p>Given the load-bearing analysis, the conditions for the real system to operate at designed capacity are specific and enumerable. Most are currently absent. The load-bearing analysis predicts exactly which degradation would result from each absent component.</p>
+  <p>Given the load-bearing analysis, the conditions for the real system to operate at designed capacity are specific and enumerable. Most are currently absent.</p>
   <h3>The Nile branch — the power supply</h3>
   <p>The most significant absent condition is the Khufu Nile branch. Without it the system is an open circuit — no power supply, no ground plane return. No other modification to the above-ground structure would make it operational. Restoring the ground plane coupling would require either rerouting a Nile branch back to the plateau base — a major river diversion project through urban Cairo — or installing a conductive medium through the plateau bedrock connecting valley temple foundations to a continuous water body. The former is practically and politically impossible near-term. The latter is technically feasible but requires subsurface access currently unavailable.</p>
   <h3>The Tura limestone casing</h3>
@@ -817,26 +815,26 @@
     </div>
     <div class="conclusion-card solid">
       <h4>✓ Geometrically verified</h4>
-      <p>Speed of light encoded in Khufu's latitude (Voron 2022). Fibonacci series F21–F28 across pyramids in two unit systems (Voron 2025). Sarcophagus spatial offsets (Voron 2022). Four-shaft celestial navigation fix (Badawy/Trimble/Bauval — independently confirmed). Planetary distance map at 147.59m/AU (Voron 2022). Gallery path 70m matching Zeta Leporis distance of 70.5 ly (Voron/Hipparcos). Khufu Nile branch position (PNAS 2022, Nature 2024). Large void above Grand Gallery (Morishima et al., Nature 2017).</p>
+      <p>Speed of light encoded in Khufu's latitude (Voron 2022). Fibonacci series F21–F28 across pyramids in two unit systems (Voron 2025). Sarcophagus spatial offsets (Voron 2022). Four-shaft celestial navigation fix (Badawy/Trimble/Bauval — independently confirmed). Planetary distance map at 147.59m/AU (Voron 2022). Gallery path 70m matching Zeta Leporis distance 70.5 ly. Khufu Nile branch position (PNAS 2022, Nature 2024). Large void above Grand Gallery (Nature 2017).</p>
     </div>
     <div class="conclusion-card solid">
       <h4>✓ Architecturally coherent</h4>
       <p>Every component has an identified engineering function. The signal chain from Nile to output is physically complete. Three independent analytical frameworks — microwave engineering, geometric decoding, and electromagnetic scattering physics — describe the same physical structure in mutually consistent terms from entirely separate starting points. The load-bearing analysis confirms no redundant elements.</p>
     </div>
     <div class="conclusion-card open">
-      <h4>⚑ Open — requires experiment</h4>
-      <p>King's Chamber eigenfrequency from geometry alone (Elmer FEM Tier 1). Nested architecture Q-multiplication ≥3× (Tier 2). Sarcophagus offsets produce predicted beam direction (Tier 3). What exits the Grand Gallery under operating conditions (Physical Tier 3 — the central question). Absolute construction date (OSL dating of Sphinx enclosure floor). Whether gallery azimuth intersects Zeta Leporis at the 10,000+ BCE epoch (ecliptic coordinate calculation). Danley's resonance mechanism: wind-driven or geologically-driven (sealed shaft retest).</p>
+      <h4>⚑ Open — requires experiment or computation</h4>
+      <p>King's Chamber eigenfrequency from geometry alone (Tier 1a — one afternoon, free). Grand Gallery ecliptic coordinate calculation resolving dating tension (Tier 1b — one afternoon, free). Nested architecture Q-multiplication ≥3× (Tier 2). Sarcophagus offsets produce predicted beam direction (Tier 3). What exits the Grand Gallery under operating conditions (Physical Tier 3 — the central question). SLD/OSL of Sphinx enclosure floor and interior granite chamber surfaces (requires Egyptian authority access). Danley's resonance mechanism: wind-driven or geologically-driven (sealed shaft retest).</p>
     </div>
   </div>
 </section>
 
 <!-- CONCLUSION -->
 <section>
-  <div class="section-marker"><div class="section-number">§ 17 · Conclusion</div><div class="section-line"></div></div>
+  <div class="section-marker"><div class="section-number">§ 16 · Conclusion</div><div class="section-line"></div></div>
   <h2>A machine waiting to be understood</h2>
   <p>The Giza complex has stood for at minimum 7,000 years. In that time it has been interpreted as a tomb, a religious monument, an astronomical observatory, a power plant, and a communication device. Each interpretation captures something real and misses something important. The persistent failure of the literature is not that researchers find real anomalies — they do — but that they leap from verified observation to specific application without the experimental evidence to support that leap.</p>
-  <p>This paper takes a different approach. It collects the verified data, draws on multiple independent research traditions, and shows that the data is collectively consistent with a specific class of engineered resonant system — without making a claim about what the system was for. The architecture speaks clearly enough without that claim. Every component has a specific engineering function. Remove any one and the system degrades predictably. Three independent analytical frameworks arrive at the same architectural picture without mutual awareness. A peer-reviewed electromagnetic physics paper confirms the energy concentration properties without any knowledge of the engineering model or the geometric decoding. A peer-reviewed hydrology paper confirms the Nile ground plane position without any knowledge of why it matters to the model.</p>
-  <p>The model is not complete. Eight open questions remain, each with a specified experiment that would address it. The first and most important is a free computation that takes one afternoon. The last and most fundamental — what exits the Grand Gallery — requires building the system and measuring the output, because that is what the physics of the situation demands. You cannot predict it from first principles. You can only be ready to measure it.</p>
+  <p>This paper takes a different approach. It collects the verified data, draws on multiple independent research traditions, and shows that the data is collectively consistent with a specific class of engineered resonant system — without making a claim about what the system was for. The architecture speaks clearly enough without that claim. Every component has a specific engineering function. Remove any one and the system degrades predictably. Three independent analytical frameworks arrive at the same architectural picture without mutual awareness. A peer-reviewed electromagnetic physics paper confirms the energy concentration properties without any knowledge of the engineering model or the geometric decoding. A peer-reviewed hydrology paper confirms the Nile ground plane position without any knowledge of why it matters to the model. A peer-reviewed surface luminescence dating study confirms Old Kingdom finishing dates on the available surface blocks — exactly consistent with a later civilisation completing, casing, and attributing an older structure.</p>
+  <p>The model is not complete. Nine open questions remain, each with a specified experiment or computation that would address it. The two most important are free computations that each take one afternoon: the King's Chamber eigenfrequency analysis in Elmer FEM, and the Grand Gallery ecliptic coordinate calculation in Stellarium or astropy. The last and most fundamental — what exits the Grand Gallery — requires building the system and measuring the output. You cannot predict it from first principles. You can only be ready to measure it.</p>
   <p>The first number is 110 Hz.</p>
   <div class="pull-quote"><p>"You don't need to predict the wave. You need to be ready to measure it."</p></div>
 </section>
@@ -846,7 +844,7 @@
 
 <footer>
   <p>Research synthesis · Microwave engineering · Acoustic physics · Electromagnetic scattering · Archaeoastronomy · Geology · Geometric analysis</p>
-  <p>Contributors: Petrie · Balezin et al. · Danley · Reid · Collins · Hale · ALBA Project · Schoch · Ghoneim et al. · Morishima et al. · Bauval · Voron · Dunn</p>
+  <p>Contributors: Petrie · Balezin et al. · Danley · Reid · Collins · Hale · ALBA Project · Schoch · Liritzis &amp; Vafiadou · Ghoneim et al. · Morishima et al. · Bauval · Voron · Dunn</p>
   <p>Model status: working hypothesis · Three independent frameworks, mutually consistent · Gallery wave mechanism: open empirical question</p>
   <p>This document is not indexed by search engines · noindex nofollow · 2026</p>
 </footer>
