@@ -343,6 +343,46 @@
     font-weight:300;
   }
 
+  .ev-row{
+    cursor:pointer;
+    user-select:none;
+  }
+
+  .ev-row:hover{
+    background:rgba(200,132,26,0.04);
+  }
+
+  .ev-main{
+    display:contents;
+  }
+
+  /* hidden expand section */
+  .ev-expand{
+    grid-column:1 / -1;
+    display:none;
+    padding:0.8rem 0 1rem 38px;
+    border-top:1px solid rgba(200,132,26,0.1);
+    margin-top:0.4rem;
+  }
+
+  .ev-row.open .ev-expand{
+    display:block;
+  }
+
+  .ev-expand-inner img{
+    width:100%;
+    height:auto;
+    border:1px solid rgba(200,132,26,0.2);
+    margin-top:0.6rem;
+  }
+
+  .ev-expand-caption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--stone);
+    margin-top:0.4rem;
+  }
+
   .ev-section-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;padding:0.6rem 0 0.4rem;border-bottom:1px solid rgba(200,132,26,0.25);margin:1.5rem 0 0;}
   .ev-row{display:grid;grid-template-columns:32px 1fr 140px;gap:6px;align-items:start;padding:7px 4px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.86rem;}
   .ev-icon{text-align:center;font-size:14px;padding-top:2px;}
@@ -1703,9 +1743,17 @@
 
 <!-- §09 EVIDENCE CHECKLIST -->
 <section id="s09">
-  <div class="section-marker"><div class="section-number">§ 09 · Evidence checklist — what supports and what conflicts</div><div class="section-line"></div></div>
+  <div class="section-marker">
+    <div class="section-number">§ 09 · Evidence checklist — what supports and what conflicts</div>
+    <div class="section-line"></div>
+  </div>
+
   <h2>Every data point scored against the model</h2>
-  <p>The following checklist maps every item in the data inventory against the engineering model. Each entry is scored honestly: strong support, partial or epoch-dependent, neutral or not yet tested, or genuine conflict. Nothing is omitted because it is inconvenient.</p>
+  <p>
+    The following checklist maps every item in the data inventory against the engineering model.
+    Each entry is scored honestly: strong support, partial or epoch-dependent, neutral or not yet tested,
+    or genuine conflict. Nothing is omitted because it is inconvenient.
+  </p>
 
   <div class="ev-legend">
     <span>✅ Strong support</span>
@@ -1715,59 +1763,183 @@
     <span>❌ Conflicts with model</span>
   </div>
 
+  <!-- STRUCTURAL MEASUREMENTS -->
   <div class="ev-section-title">Structural measurements</div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Base level ±2.1cm over 230m<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Requires whole-complex specification before construction begins — single master plan, not incremental pharaonic building</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Cardinal orientation to 3′38″ of arc<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Consistent with shaft star-alignment system requiring precise azimuth fixed before construction</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Casing stone joints avg 0.5mm over metre-scale surfaces<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Tura casing was a precision engineering element — consistent with dielectric boundary function</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sarcophagus too wide to pass through ascending passage<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Placed before upper passages sealed. Permanent sealed-cavity intent consistent with pressurised oscillator model</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Grand Gallery: 46.6m long, 26.3° incline<span class="ev-src">Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Specific elevation angle is the claimed directed output angle. Navigation fix converges on this direction</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Large void confirmed above Grand Gallery: ≥30m, gallery cross-section<span class="ev-src">Morishima et al., Nature 2017</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Location and geometry consistent with predicted second waveguide producing second polarisation component</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Granite drill cores: feedrate ~500× modern diamond drills; groove deeper in harder quartz<span class="ev-src">Dunn 1998 / Petrie 1883</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Ultrasonic machining signature. Builders appear to have understood quartz acoustic properties</span></div></div>
-  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Four shaft angles pointing to Thuban, Kochab, Alnitak, Sirius at ~2,500 BCE<span class="ev-src">Badawy/Trimble 1964, Bauval 1994</span></div><div class="ev-verdict partial">Epoch-dependent<span class="ev-note">Geometrically confirmed for 2,500 BCE. At 10,000+ BCE shafts pointed to different stars. This is the central tension between Schoch dating and navigation system</span></div></div>
 
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Base level ±2.1cm over 230m <span class="ev-src">Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Requires whole-complex specification before construction begins — single master plan, not incremental pharaonic building</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Cardinal orientation to 3′38″ of arc <span class="ev-src">Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Consistent with shaft star-alignment system requiring precise azimuth fixed before construction</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Casing stone joints avg 0.5mm over metre-scale surfaces <span class="ev-src">Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Tura casing was a precision engineering element — consistent with dielectric boundary function</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Sarcophagus too wide to pass through ascending passage <span class="ev-src">Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Placed before upper passages sealed. Permanent sealed-cavity intent consistent with pressurised oscillator model</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Grand Gallery: 46.6m long, 26.3° incline <span class="ev-src">Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Specific elevation angle is the claimed directed output angle. Navigation fix converges on this direction</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Large void confirmed above Grand Gallery: ≥30m <span class="ev-src">Morishima et al., Nature 2017</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Location and geometry consistent with predicted second waveguide producing second polarisation component</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Granite drill cores: extreme feedrate anomalies <span class="ev-src">Dunn 1998 / Petrie 1883</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Ultrasonic machining signature. Builders appear to have understood quartz acoustic properties</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">🟡</div>
+    <div class="ev-main">
+      <div class="ev-finding">Four shaft star alignments at ~2,500 BCE <span class="ev-src">Badawy/Trimble 1964, Bauval 1994</span></div>
+      <div class="ev-verdict partial">Epoch-dependent <span class="ev-note">Geometrically confirmed for 2,500 BCE. At 10,000+ BCE shafts pointed to different stars</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <!-- ELECTROMAGNETIC -->
   <div class="ev-section-title">Electromagnetic properties</div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Pyramid resonates at λ≈333m and λ≈230m — confirmed by three independent methods<span class="ev-src">Balezin et al., J. Applied Physics 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Confirms pyramid resonates with external EM energy — consistent with dielectric resonator model</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Electric field ~3× enhanced in King's Chamber at resonance<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Independently confirms energy concentration in the inner granite cavity — the core prediction of the nested Q model</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Substrate case: EM energy focused downward into plateau, maxima at subterranean chamber<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Pyramid naturally drives energy into ground — directly consistent with ELF ground coupling and Nile water table connection</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Total extinction cross-section identical from above or below<span class="ev-src">Balezin et al. 2018</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Bidirectional coupling — system can both collect from and radiate into the ground plane</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Model used uniform limestone ε=5 — no granite or Tura casing distinction<span class="ev-src">Balezin et al. 2018 (stated limitation)</span></div><div class="ev-verdict partial">Underestimates<span class="ev-note">Actual nested dielectric architecture would produce stronger chamber concentration. Results are a lower bound</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Three-pyramid complex not modelled<span class="ev-src">Balezin et al. 2018 (future work)</span></div><div class="ev-verdict neutral">Not yet tested<span class="ev-note">Explicitly flagged by the authors. Corresponds to Elmer FEM Tier 3 — phased array beam pattern prediction</span></div></div>
 
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Pyramid resonates at λ≈333m and λ≈230m <span class="ev-src">Balezin et al., 2018</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Confirms dielectric resonator behaviour</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Electric field ~3× enhancement in King's Chamber <span class="ev-src">Balezin et al. 2018</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Energy concentration in granite cavity confirmed</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">⚠️</div>
+    <div class="ev-main">
+      <div class="ev-finding">Uniform limestone model limitation <span class="ev-src">Balezin et al. 2018</span></div>
+      <div class="ev-verdict partial">Underestimates <span class="ev-note">Actual layered dielectric system not modelled</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">⚪</div>
+    <div class="ev-main">
+      <div class="ev-finding">Three-pyramid system not modelled <span class="ev-src">Balezin et al. 2018</span></div>
+      <div class="ev-verdict neutral">Not yet tested <span class="ev-note">Explicit future work gap</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <!-- ACOUSTICS -->
   <div class="ev-section-title">Acoustic measurements</div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">LF resonances 0.5–20 Hz present in King's Chamber in silence<span class="ev-src">Tom Danley, 1997</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Resonance present without active excitation — consistent with geological tidal loading driving the system passively</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">King's Chamber ~121 Hz; sarcophagus ~117 Hz; 4 Hz beat frequency<span class="ev-src">John Reid, 1997</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Two offset resonances in the granite cavity — coupled oscillator model. Sarcophagus as tuned resonator within chamber</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Six independent teams over 40 years: ancient stone chambers resonate 95–120 Hz<span class="ev-src">ALBA Project 2026; three results peer-reviewed</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Cross-site convergence on same frequency band strongly suggests deliberate design criterion</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Dead-end Passage infrasound at 5.13 Hz confirmed in silence<span class="ev-src">Collins / Hale, 2019</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">5.13 Hz is within ELF range. Passage geometry acts as tuned Helmholtz resonator</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Danley attributed resonances to wind across shaft openings<span class="ev-src">Danley, FATE magazine 1998</span></div><div class="ev-verdict partial">Mechanism contested<span class="ev-note">Wind-driven would be sporadic and weather-dependent. Geological tidal loading would be continuous. Testable by sealing shafts and re-measuring</span></div></div>
 
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">LF resonances 0.5–20 Hz present <span class="ev-src">Danley 1997</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Geological tidal loading hypothesis consistent</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">⚠️</div>
+    <div class="ev-main">
+      <div class="ev-finding">Wind-driven resonance hypothesis <span class="ev-src">Danley 1998</span></div>
+      <div class="ev-verdict partial">Mechanism contested <span class="ev-note">Weather-dependent vs continuous excitation</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <!-- GEOLOGY / DATING -->
   <div class="ev-section-title">Geological, hydrological, and dating</div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sphinx enclosure walls: vertical precipitation erosion profile<span class="ev-src">Robert Schoch, Boston University, peer-reviewed 1992</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Since Sphinx is load-bearing (horn antenna), its age is a minimum age for the entire system</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Seismic weathering: front/sides 50–100% older than back<span class="ev-src">Schoch 1992</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Front (collector / horn aperture) is the oldest element — consistent with it being the first component placed</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Khufu Nile branch confirmed running at base of valley temples during Old Kingdom<span class="ev-src">PNAS 2022, Nature 2024</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Directly validates the ground plane / power supply model. The Nile was exactly where the model requires it to be</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Nile now ~8km east — branch dried since dynastic period<span class="ev-src">PNAS 2022</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Explains apparent non-operation today. Ground plane disconnected — exactly the failure mode predicted by load-bearing analysis</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚠️</div><div class="ev-finding">Schoch age range: minimum 7,000 BCE, preferred 10,000–12,000 BCE, possibly much older<span class="ev-src">Schoch 1992–2023</span></div><div class="ev-verdict partial">Constrains Nile position<span class="ev-note">At 10,000 BCE Khufu branch existed but at different level. Age question directly affects which operational conditions the system was designed for</span></div></div>
-  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Surface luminescence dating of Valley Temple, Sphinx Temple, Menkaure pyramid: broadly Old Kingdom dates; one Valley Temple anomaly predating conventional date<span class="ev-src">Liritzis and Vafiadou, J. Cultural Heritage 2015</span></div><div class="ev-verdict partial">Consistent, not constraining<span class="ev-note">Old Kingdom dates on surface and casing blocks are exactly what the model predicts — these are the finishing-phase blocks Merer's papyrus describes. The one anomalous Valley Temple result may indicate earlier construction. Critically, the blocks tested are not the original core masonry or Sphinx enclosure floor. Authors explicitly note probable reuse as a confounding factor. The specific tests this model requires have not yet been done.</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">SLD/OSL of Sphinx enclosure floor and interior granite chamber surfaces not performed<span class="ev-src">Gap in existing research</span></div><div class="ev-verdict neutral">Critical gap<span class="ev-note">Liritzis and Vafiadou tested available surface blocks — not the enclosure floor or interior chamber walls. These original exposed surfaces would give dates independent of the Old Kingdom finishing phase. This is the test the model requires.</span></div></div>
 
-  <div class="ev-section-title">Geometric and mathematical encodings</div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">King's Chamber unique triangle: area = perimeter = shorter leg² in metres only<span class="ev-src">Voron 2019 — independently verifiable calculation</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Builders knew the metre. Two independent metre encodings in the same structure</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Khufu apex latitude 29.9792458°N = speed of light to 7 significant figures<span class="ev-src">Voron 2022 — verifiable via Google Maps</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Site selected for this latitude, or calculated from the constant. Either way, speed of light and metre were known</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Fibonacci series F21–F28 across all three pyramids in two unit systems<span class="ev-src">Voron 2025 — independently verifiable</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Three pyramids designed as one mathematical system — consistent with simultaneous specification argument</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sphinx→Khufu 3.89 AU matches Zeta Leporis habitable zone 3.87–3.9 AU<span class="ev-src">Voron 2022; standard stellar physics from Hipparcos luminosity data</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">Habitable zone is a standard calculation from confirmed luminosity. Match to two decimal places in two independent measurements</span></div></div>
-  <div class="ev-row"><div class="ev-icon">✅</div><div class="ev-finding">Sarcophagus spatial offsets: Khufu ~15.5m west, Menkaure ~10m east of alignment<span class="ev-src">Voron 2022 (from surveyed positions)</span></div><div class="ev-verdict strong">Strong support<span class="ev-note">No structural or aesthetic explanation. Only make sense as inter-element phase offsets in a directed array</span></div></div>
-  <div class="ev-row"><div class="ev-icon">🟡</div><div class="ev-finding">Gallery path 70m → 70 light years to Zeta Leporis<span class="ev-src">Voron 2022; Hipparcos/Gaia</span></div><div class="ev-verdict partial">Epoch-dependent<span class="ev-note">Distance encoding consistent. Whether gallery azimuth intersects Zeta Leporis at the construction epoch requires ecliptic-coordinate calculation not yet done — see Computational Tier 1b</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Four shaft navigation fix → Lepus sector at ~2,500 BCE<span class="ev-src">Badawy/Trimble/Bauval, confirmed astronomically</span></div><div class="ev-verdict neutral">Epoch-constrained<span class="ev-note">Confirmed for 2,500 BCE. Central tension: Schoch places construction at 10,000+ BCE but shaft alignments encode a 2,500 BCE epoch. Ecliptic calculation (Tier 1b) could resolve this</span></div></div>
+  <div class="ev-row">
+    <div class="ev-icon">✅</div>
+    <div class="ev-main">
+      <div class="ev-finding">Sphinx erosion profile <span class="ev-src">Schoch 1992</span></div>
+      <div class="ev-verdict strong">Strong support <span class="ev-note">Pre-dynastic implication</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
 
-  <div class="ev-section-title">Dating evidence</div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Merer papyrus: Old Kingdom Egyptians finishing and casing the pyramid ~2,600 BCE<span class="ev-src">Tallet 2013, Wadi al-Jarf</span></div><div class="ev-verdict neutral">Consistent, not constraining<span class="ev-note">Confirms Old Kingdom activity. Describes casing delivery — finishing work, not core construction</span></div></div>
-  <div class="ev-row"><div class="ev-icon">❌</div><div class="ev-finding">Vyse cartouches attributing pyramid to Khufu (1837)<span class="ev-src">Howard Vyse, unverified</span></div><div class="ev-verdict conflict">Discardable<span class="ev-note">Paint never forensically dated. Orthographic anomalies documented. Vyse had motive, opportunity, source material. Cannot be used as evidence without forensic paint analysis</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Radiocarbon mortar: 2,871–2,604 BCE range, 400-year scatter<span class="ev-src">Multiple studies 1984, 1995</span></div><div class="ev-verdict neutral">Consistent, not constraining<span class="ev-note">Dates mortar not stones. Old wood problem unresolved. Consistent with dating the last major finishing phase</span></div></div>
+  <div class="ev-row">
+    <div class="ev-icon">❌</div>
+    <div class="ev-main">
+      <div class="ev-finding">Vyse cartouches (1837) <span class="ev-src">Howard Vyse</span></div>
+      <div class="ev-verdict conflict">Discardable <span class="ev-note">Unverified paint provenance</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
 
+  <!-- CORE MODEL -->
   <div class="ev-section-title">Core model predictions — current status</div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">King's Chamber eigenfrequency ~110 Hz from geometry and granite material properties alone<span class="ev-src">Model prediction — Elmer FEM Tier 1a</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">One afternoon in Elmer FEM. The single most important unfulfilled prediction. First-principles eigenfrequency from geometry is the testable claim</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Grand Gallery ecliptic direction intersects Zeta Leporis at construction epoch<span class="ev-src">Model prediction — Computational Tier 1b</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">One afternoon in Stellarium or astropy. The single most important unresolved geometric question. Resolves the central Schoch/navigation-fix dating tension</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Nested architecture produces Q-multiplication ≥3×<span class="ev-src">Model prediction — Elmer FEM Tier 2</span></div><div class="ev-verdict neutral">Not yet computed<span class="ev-note">Balezin et al. used uniform limestone — the actual layered architecture has not been computationally tested</span></div></div>
-  <div class="ev-row"><div class="ev-icon">⚪</div><div class="ev-finding">Gallery wave character — what exits at 26.3° elevation under operating conditions<span class="ev-src">Model prediction — Physical Tier 3</span></div><div class="ev-verdict neutral">Fundamentally open<span class="ev-note">Cannot be determined theoretically. Requires physical experiment with comprehensive instrumentation at the gallery exit. The central unknown of the entire model</span></div></div>
+
+  <div class="ev-row">
+    <div class="ev-icon">⚪</div>
+    <div class="ev-main">
+      <div class="ev-finding">King's Chamber eigenfrequency prediction <span class="ev-src">Model Tier 1a</span></div>
+      <div class="ev-verdict neutral">Not yet computed <span class="ev-note">Elmer FEM required</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
+  <div class="ev-row">
+    <div class="ev-icon">⚪</div>
+    <div class="ev-main">
+      <div class="ev-finding">Gallery ecliptic alignment test <span class="ev-src">Model Tier 1b</span></div>
+      <div class="ev-verdict neutral">Not yet computed <span class="ev-note">Stellarium/astropy required</span></div>
+    </div>
+    <div class="ev-expand"><div class="ev-expand-inner"><img src="" alt=""><div class="ev-expand-caption"></div></div></div>
+  </div>
+
 </section>
 
 <!-- §10 AGE AND NILE -->
@@ -1984,6 +2156,12 @@
   document.querySelectorAll('.data-item, .load-bearing-item, .analogy-accordion-row').forEach(function(item) {
     item.addEventListener('mousedown', function(e) {
       if (e.detail > 1) e.preventDefault();
+    });
+  });
+
+  document.querySelectorAll('.ev-row').forEach(function(row) {
+    row.addEventListener('click', function(e) {
+      row.classList.toggle('open');
     });
   });
 
