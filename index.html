@@ -369,11 +369,35 @@
     display:block;
   }
 
+  .ev-expand-inner{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  }
+
   .ev-expand-inner img{
     width:100%;
     height:auto;
     border:1px solid rgba(200,132,26,0.2);
     margin-top:0.6rem;
+  }
+
+  .ev-img-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:10px;
+    width:100%;
+    max-width:640px; /* keeps them visually tight and centered */
+    margin:0 auto;
+  }
+
+  .ev-img-grid img{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(200,132,26,0.2);
+    object-fit:cover;
   }
 
   .ev-expand-caption{
@@ -1768,11 +1792,19 @@
 
   <div class="ev-row">
     <div class="ev-icon">✅</div>
-    <div class="ev-main">
-      <div class="ev-finding">Base level ±2.1cm over 230m <span class="ev-src">Petrie 1883</span></div>
-      <div class="ev-verdict strong">Strong support <span class="ev-note">Requires whole-complex specification before construction begins — single master plan, not incremental pharaonic building</span></div>
+      <div class="ev-main">
+        <div class="ev-finding">Base level ±2.1cm over 230m <span class="ev-src">Petrie 1883</span></div>
+        <div class="ev-verdict strong">Strong support <span class="ev-note">Requires whole-complex specification before construction begins — single master plan, not incremental pharaonic building</span></div>
+      </div>
+      <div class="ev-expand">
+        <div class="ev-expand-inner">
+          <div class="ev-img-grid">
+            <img src="https://placehold.co/200x100" alt="">
+            <img src="https://placehold.co/200x100" alt="">
+          </div>
+        <div class="ev-expand-caption"></div>
+      </div>
     </div>
-    <div class="ev-expand"><div class="ev-expand-inner"><img src="https://placehold.co/200x100" alt=""><img src="https://placehold.co/200x100" alt=""><div class="ev-expand-caption"></div></div></div>
   </div>
 
   <div class="ev-row">
